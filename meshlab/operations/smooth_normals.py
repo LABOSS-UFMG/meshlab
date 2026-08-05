@@ -35,7 +35,7 @@ def smooth_normals(
 
     validation.is_union(relaxation, [float, np.ndarray])
     if isinstance(relaxation, np.ndarray):
-        validation.is_sequence(relaxation.tolist(), Number)
+        validation.is_sequence(relaxation.tolist(), None, Number)
     
     # ------------------------------------------------------------------------ #
     # Allocate memory to new normals and rotation
