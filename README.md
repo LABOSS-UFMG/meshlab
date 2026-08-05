@@ -86,7 +86,8 @@ meshlab/
 ├── data/          # Data structures
 ├── operations/    # Mesh generation and manipulation algorithms
 ├── export/        # Interfaces with gmsh
-├── utils/         # Validation and utility functions
+├── visualization/ # Visualization utilities
+├── utils/         # Utility functions
 ```
 
 The code is intentionally organized so that new features can usually be implemented by modifying a single file.
