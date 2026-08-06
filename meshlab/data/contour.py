@@ -15,23 +15,13 @@ class Contour():
     The array is preallocated during construction to avoid repeated memory
     allocations when new indices are inserted. The attribute ``num_indices``
     keeps track of the number of valid indices currently stored.
-
-    Attributes
-    ----------
-    name : str
-        Name of the contour.
-
-    indices : ndarray
-        Vertex indices defining the group.
-
-    num_indices : int
-        Number of valid indices currently stored.
     """
 
     def __init__(
             self,
             name: str,
-            capacity: int,
+            capacity: int = 1000,
+            increase_ratio: float = 1.5,
         ) -> None:
         """
         Create an empty contour.
@@ -50,10 +40,12 @@ class Contour():
         # ------------------------------------------------------------------------ #
         # Store constructor arguments
         self.name = name
+        self.capacity = capacity
+        self.increase_ratio = increase_ratio
 
         # ------------------------------------------------------------------------ #
         # Allocate memory for the vertex indices
-        self.indices = np.empty(capacity, dtype=np.int32)
+        self.indices = np.empty(self.capacity, dtype=np.int32)
 
         self.num_indices: int = 0
 
@@ -69,6 +61,14 @@ class Contour():
         index : int
             Vertex index.
         """
+        # ------------------------------------------------------------------------ #
+        # Check maximum capacity
+        if self.num_indices == self.capacity - 1:
+            self.capacity = int(self.capacity * self.increase_ratio)
+            indices = np.empty(self.capacity, dtype=np.int32)
+            indices[:self.num_indices] = self.indices[:self.num_indices]
+            self.indices = indices
+
         # ------------------------------------------------------------------------ #
         # Store the new index
         self.indices[self.num_indices] = index

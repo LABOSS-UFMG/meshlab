@@ -11,19 +11,21 @@ def compute_angles(
         contour: Contour,
     ) -> np.ndarray:
     """
-    Compute the interior angle at each vertex of a closed contour.
+    Compute the exterior angle at each vertex of a closed contour.
 
     Parameters
     ----------
     mesh : Mesh
         Mesh containing the vertex coordinates.
+
     contour : Contour
-        Closed contour defined by ordered vertex indices.
+        Closed contour defined by ordered vertex indices in counter-clockwise
+        orientation.
 
     Returns
     -------
     np.ndarray
-        Interior angles (radians) at each vertex.
+        Exterior angles (radians) in the interval [0, 2*pi].
     """
     # ------------------------------------------------------------------------ #
     # Validate arguments
@@ -31,13 +33,13 @@ def compute_angles(
     validation.is_object(contour, Contour)
 
     # ------------------------------------------------------------------------ #
-    # Allocate memory to angles
+    # Allocate memory
     num_vertices = contour.num_indices
 
     angles = np.empty(num_vertices, dtype=np.float64)
 
     # ------------------------------------------------------------------------ #
-    # Compute angles
+    # Compute exterior angles
     for i in range(num_vertices):
 
         i_prev = (i - 1) % num_vertices
@@ -47,18 +49,18 @@ def compute_angles(
         p_curr = mesh.vertices[contour.indices[i]]
         p_next = mesh.vertices[contour.indices[i_next]]
 
-        u = p_prev - p_curr
-        v = p_next - p_curr
+        # Compute the two contour edges
+        e_prev = p_prev - p_curr
+        e_next = p_next - p_curr
 
-        u /= np.linalg.norm(u)
-        v /= np.linalg.norm(v)
+        e_prev /= np.linalg.norm(e_prev)
+        e_next /= np.linalg.norm(e_next)
 
-        cos_theta = np.dot(u, v)
-
-        # Evita erros numéricos
-        cos_theta = np.clip(cos_theta, -1.0, 1.0)
-
-        angles[i] = np.arccos(cos_theta)
+        # Compute the angle
+        dot = np.dot(e_prev, e_next)
+        angle = np.arccos(dot)
+        
+        angles[i] = angle
 
     # ------------------------------------------------------------------------ #
     return angles

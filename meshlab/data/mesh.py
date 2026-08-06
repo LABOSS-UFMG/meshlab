@@ -25,30 +25,14 @@ class Mesh():
     Cells may have different numbers of vertices (e.g., triangles and
     quadrilaterals). Unused positions in the connectivity array are filled
     with ``-1``.
-
-    Attributes
-    ----------
-    vertices : ndarray
-        Coordinates of the mesh vertices.
-
-    cells : ndarray
-        Connectivity of the mesh cells.
-
-    num_vertices : int
-        Number of vertices currently stored.
-
-    num_cells : int
-        Number of cells currently stored.
-
-    cells_max_dim : int
-        Maximum number of vertices per cell.
     """
 
     def __init__(
             self,
-            vertices_capacity: int,
-            cells_capacity: int,
+            vertices_capacity: int = 1000,
+            cells_capacity: int = 1000,
             cells_max_dim: int = 4,
+            increase_ratio: float = 1.5,
         ) -> None:
         """
         Create an empty mesh.
@@ -61,6 +45,8 @@ class Mesh():
             Maximum number of cells that can be stored.
         cells_max_dim : int, default=4
             Maximum number of vertices per cell.
+        increase_ratio : float, default=1.5
+            Ratio used to increase the capacity of the arrays when they are full.
         """
         # ------------------------------------------------------------------------ #
         # Validate input arguments
@@ -70,12 +56,15 @@ class Mesh():
 
         # ------------------------------------------------------------------------ #
         # Store constructor arguments
+        self.vertices_capacity = vertices_capacity
+        self.cells_capacity = cells_capacity
         self.cells_max_dim = cells_max_dim
+        self.increase_ratio = increase_ratio
 
         # ------------------------------------------------------------------------ #
         # Allocate memory for the mesh data
-        self.vertices = np.empty([vertices_capacity, 2], dtype=np.float64)
-        self.cells = np.full([cells_capacity, cells_max_dim], -1, dtype=np.int32)
+        self.vertices = np.empty([self.vertices_capacity, 2], dtype=np.float64)
+        self.cells = np.full([self.cells_capacity, self.cells_max_dim], -1, dtype=np.int32)
 
         self.num_vertices: int = 0
         self.num_cells: int = 0
@@ -97,6 +86,14 @@ class Mesh():
         int
             Index of the inserted vertex.
         """
+        # ------------------------------------------------------------------------ #
+        # Check maximum capacity
+        if self.num_vertices == self.vertices_capacity - 1:
+            self.vertices_capacity = int(self.vertices_capacity * self.increase_ratio)
+            vertices = np.empty([self.vertices_capacity, 2], dtype=np.float64)
+            vertices[:self.num_vertices, :] = self.vertices[:self.num_vertices, :]
+            self.vertices = vertices
+
         # ------------------------------------------------------------------------ #
         # Add vertex
         self.vertices[self.num_vertices, 0] = vertex[0]
@@ -221,6 +218,14 @@ class Mesh():
         int
             Index of the inserted cell.
         """
+        # ------------------------------------------------------------------------ #
+        # Check maximum capacity
+        if self.num_cells == self.cells_capacity - 1:
+            self.cells_capacity = int(self.cells_capacity * self.increase_ratio)
+            cells = np.full([self.cells_capacity, self.cells_max_dim], -1, dtype=np.int32)
+            cells[:self.num_cells, :] = self.cells[:self.num_cells, :]
+            self.cells = cells
+        
         # ------------------------------------------------------------------------ #
         # Add cell
         for i in range(len(cell)):
