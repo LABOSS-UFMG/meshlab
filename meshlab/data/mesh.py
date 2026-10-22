@@ -1,6 +1,4 @@
 # -------------------------------------------------------------------------------- #
-from operator import index
-
 import numpy as np
 
 from typing import Sequence

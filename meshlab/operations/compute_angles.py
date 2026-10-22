@@ -3,7 +3,6 @@ import numpy as np
 
 from meshlab.data.mesh import Mesh
 from meshlab.data.contour import Contour
-from meshlab.utils import validation
 
 # -------------------------------------------------------------------------------- #
 def compute_angles(
@@ -27,11 +26,6 @@ def compute_angles(
     np.ndarray
         Exterior angles (radians) in the interval [0, 2*pi].
     """
-    # ------------------------------------------------------------------------ #
-    # Validate arguments
-    validation.is_object(mesh, Mesh)
-    validation.is_object(contour, Contour)
-
     # ------------------------------------------------------------------------ #
     # Allocate memory
     num_vertices = contour.num_indices

@@ -3,7 +3,6 @@ import numpy as np
 
 from meshlab.data.mesh import Mesh
 from meshlab.data.contour import Contour
-from meshlab.utils import validation
 
 # -------------------------------------------------------------------------------- #
 def compute_normals(
@@ -38,11 +37,6 @@ def compute_normals(
     np.ndarray
         Array of shape (N, 2) containing one unit normal per vertex.
     """
-    # ------------------------------------------------------------------------ #
-    # Validate arguments
-    validation.is_object(mesh, Mesh)
-    validation.is_object(front, Contour)
-
     # ------------------------------------------------------------------------ #
     # Allocate memory for normal vectors
     num_vertices = front.num_indices

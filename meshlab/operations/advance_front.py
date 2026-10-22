@@ -5,7 +5,6 @@ from numbers import Number
 
 from meshlab.data.mesh import Mesh
 from meshlab.data.contour import Contour
-from meshlab.utils import validation
 
 # -------------------------------------------------------------------------------- #
 def advance_front(
@@ -33,19 +32,6 @@ def advance_front(
     Group
         New front.
     """
-    # ------------------------------------------------------------------------ #
-    # Validate arguments
-    validation.is_object(mesh, Mesh)
-    validation.is_object(front, Contour)
-    validation.is_object(normals, np.ndarray)
-
-    for normal in normals:
-        validation.is_sequence(normal.tolist(), 2, Number)
-
-    validation.is_union(height, [float, np.ndarray])
-    if isinstance(height, np.ndarray):
-        validation.is_sequence(height.tolist(), None, Number)
-
     # ------------------------------------------------------------------------ #
     # Create new front
     num_vertices = front.num_indices

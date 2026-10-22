@@ -3,8 +3,6 @@ import numpy as np
 
 from numbers import Number
 
-from meshlab.utils import validation
-
 # -------------------------------------------------------------------------------- #
 def smooth_normals(
         normals: np.ndarray,
@@ -27,16 +25,6 @@ def smooth_normals(
         Smoothed unit normals and the rotation angle (radians) applied to each
         normal. Positive angles correspond to counter-clockwise rotation.
     """
-    # ------------------------------------------------------------------------ #
-    # Validate arguments
-    validation.is_object(normals, np.ndarray)
-    for normal in normals:
-        validation.is_sequence(normal.tolist(), 2, Number)
-
-    validation.is_union(relaxation, [float, np.ndarray])
-    if isinstance(relaxation, np.ndarray):
-        validation.is_sequence(relaxation.tolist(), None, Number)
-    
     # ------------------------------------------------------------------------ #
     # Allocate memory to new normals and rotation
     num_normals = normals.shape[0]
