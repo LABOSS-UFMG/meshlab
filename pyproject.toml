@@ -9,7 +9,7 @@ version = "0.1.0"
 description = "A Python toolkit for mesh generation and manipulation."
 authors = [{ name="Lucas Ribeiro Alves", email="lucas.ra.mast@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "numpy>=2.0",
     "matplotlib>=3.7",

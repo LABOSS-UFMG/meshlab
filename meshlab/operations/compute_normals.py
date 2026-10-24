@@ -1,84 +1,64 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from meshlab.data.mesh import Mesh
-from meshlab.data.contour import Contour
+from meshlab.core.mesh import Mesh
+from meshlab.core.front import Front
 
 # -------------------------------------------------------------------------------- #
 def compute_normals(
         mesh: Mesh,
-        front: Contour,
+        front: Front,
         method: str = "central",
     ) -> np.ndarray:
-    """
-    Compute outward unit normals at the vertices of a closed contour.
+    """Compute right-hand unit normals at the vertices of a planar front.
 
     Parameters
     ----------
     mesh : Mesh
-        Mesh containing the vertex coordinates.
-
-    front : Contour
-        Closed contour defined by ordered vertex indices in counter-clockwise
-        orientation.
-
-    method : str
-        Method used to compute the vertex tangent direction:
-
-        - ``"central"``: computes the tangent using the vector connecting the
-          previous and next vertices.
-        - ``"bisector"``: computes the tangent as the angle bisector between
-          the two adjacent edges.
-
-        Default: ``"central"``.
+        Two-dimensional mesh containing the front vertices.
+    front : Front
+        Consistently oriented edges of nonbranching curves.
+    method : {"central", "bisector"}, default="central"
+        Sum incident edge vectors for central tangents, or incident unit
+        edge vectors for bisector tangents.
 
     Returns
     -------
-    np.ndarray
-        Array of shape (N, 2) containing one unit normal per vertex.
+    ndarray, shape (N, 2)
+        Normals in mesh.float_dtype, ordered by np.unique(front.entities.edge).
+        advance_front uses the same ascending vertex-index order.
+
+    Notes
+    -----
+    The convention is tangent cross ez: (tx, ty) becomes (ty, -tx).
+    Open endpoints use their single incident edge. No guide constraints are
+    applied. The caller ensures dim=2, nonzero edges and nonzero vertex
+    tangents. No input checks, smoothing or collision detection are performed.
     """
     # ------------------------------------------------------------------------ #
-    # Allocate memory for normal vectors
-    num_vertices = front.num_indices
-
-    normals = np.empty((num_vertices, 2), dtype=np.float64)
+    # Identify unique vertices and local edge connectivity
+    indices, inverse = np.unique(front.entities.edge, return_inverse=True)
+    edges = inverse.reshape(-1, 2)
+    points = mesh.points[indices]
+    vectors = points[edges[:, 1]] - points[edges[:, 0]]
 
     # ------------------------------------------------------------------------ #
-    # Compute normals
-    for i in range(num_vertices):
+    # Weight incident edges according to the tangent method
+    weights = {
+        "central": lambda: np.ones(len(edges), dtype=mesh.float_dtype),
+        "bisector": lambda: np.linalg.norm(vectors, axis=1),
+    }[method]()
+    vectors = vectors / weights[:, None]
+    tangents = np.zeros((len(indices), 2), dtype=mesh.float_dtype)
+    np.add.at(tangents, edges[:, 0], vectors)
+    np.add.at(tangents, edges[:, 1], vectors)
+    tangents /= np.linalg.norm(tangents, axis=1)[:, None]
 
-        i_prev = (i - 1) % num_vertices
-        i_next = (i + 1) % num_vertices
-
-        p_prev = mesh.vertices[front.indices[i_prev]]
-        p_curr = mesh.vertices[front.indices[i]]
-        p_next = mesh.vertices[front.indices[i_next]]
-
-        # Compute tangent direction
-        if method == "central":
-
-            tangent = p_next - p_prev
-            tangent /= np.linalg.norm(tangent)
-
-        elif method == "bisector":
-
-            t_prev = p_curr - p_prev
-            t_prev /= np.linalg.norm(t_prev)
-
-            t_next = p_next - p_curr
-            t_next /= np.linalg.norm(t_next)
-
-            tangent = t_prev + t_next
-            tangent /= np.linalg.norm(tangent)
-
-        else:
-            raise ValueError(
-                f"Unknown normal computation method: '{method}'."
-            )
-
-        # Rotate tangent by 90 degrees to obtain outward normal
-        normals[i, 0] = tangent[1]
-        normals[i, 1] = -tangent[0]
+    # ------------------------------------------------------------------------ #
+    # Rotate tangents clockwise to obtain unit normals
+    normals = np.empty_like(tangents)
+    normals[:, 0] = tangents[:, 1]
+    normals[:, 1] = -tangents[:, 0]
 
     # ------------------------------------------------------------------------ #
     return normals

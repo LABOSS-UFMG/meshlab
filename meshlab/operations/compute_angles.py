@@ -1,60 +1,59 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from meshlab.data.mesh import Mesh
-from meshlab.data.contour import Contour
+from meshlab.core.mesh import Mesh
+from meshlab.core.front import Front
 
 # -------------------------------------------------------------------------------- #
 def compute_angles(
         mesh: Mesh,
-        contour: Contour,
+        front: Front,
     ) -> np.ndarray:
-    """
-    Compute the exterior angle at each vertex of a closed contour.
+    """Compute the smaller angle between incident edges of a planar front.
 
     Parameters
     ----------
     mesh : Mesh
-        Mesh containing the vertex coordinates.
-
-    contour : Contour
-        Closed contour defined by ordered vertex indices in counter-clockwise
-        orientation.
+        Two-dimensional mesh containing the front coordinates.
+    front : Front
+        Consistently oriented, nonbranching front with nonzero edges.
 
     Returns
     -------
-    np.ndarray
-        Exterior angles (radians) in the interval [0, 2*pi].
+    ndarray, shape (N,)
+        Angles in [0, pi], in mesh.float_dtype and ascending unique vertex-index
+        order, matching compute_normals and advance_front.
+
+    Notes
+    -----
+    Preserves the unsigned arccos convention of the legacy implementation.
+    Convex and reflex corners can have the same angle; a straight vertex has
+    angle pi. These are not oriented exterior or fluid-side angles.
+    Open endpoints receive pi by convention, so their angle-only height
+    correction is neutral. This is not a measured corner angle.
+    No input checks are performed.
     """
     # ------------------------------------------------------------------------ #
-    # Allocate memory
-    num_vertices = contour.num_indices
-
-    angles = np.empty(num_vertices, dtype=np.float64)
+    # Identify vertices and normalized oriented edges
+    indices, inverse = np.unique(front.entities.edge, return_inverse=True)
+    edges = inverse.reshape(-1, 2)
+    points = mesh.points[indices]
+    vectors = points[edges[:, 1]] - points[edges[:, 0]]
+    vectors /= np.linalg.norm(vectors, axis=1)[:, None]
 
     # ------------------------------------------------------------------------ #
-    # Compute exterior angles
-    for i in range(num_vertices):
+    # Collect vectors pointing from each vertex to its two neighbors
+    previous = np.zeros_like(points)
+    following = np.zeros_like(points)
+    previous[edges[:, 1]] = -vectors
+    following[edges[:, 0]] = vectors
 
-        i_prev = (i - 1) % num_vertices
-        i_next = (i + 1) % num_vertices
-
-        p_prev = mesh.vertices[contour.indices[i_prev]]
-        p_curr = mesh.vertices[contour.indices[i]]
-        p_next = mesh.vertices[contour.indices[i_next]]
-
-        # Compute the two contour edges
-        e_prev = p_prev - p_curr
-        e_next = p_next - p_curr
-
-        e_prev /= np.linalg.norm(e_prev)
-        e_next /= np.linalg.norm(e_next)
-
-        # Compute the angle
-        dot = np.dot(e_prev, e_next)
-        angle = np.arccos(dot)
-        
-        angles[i] = angle
+    # ------------------------------------------------------------------------ #
+    # Clip roundoff before evaluating the unsigned angle
+    dot = np.sum(previous * following, axis=1)
+    angles = np.arccos(np.clip(dot, -1.0, 1.0))
+    degree = np.bincount(edges.ravel(), minlength=len(indices))
+    angles[degree == 1] = np.pi
 
     # ------------------------------------------------------------------------ #
     return angles

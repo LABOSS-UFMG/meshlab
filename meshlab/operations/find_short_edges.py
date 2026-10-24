@@ -1,43 +1,29 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from meshlab.data.mesh import Mesh
-from meshlab.data.contour import Contour
+from meshlab.core import Mesh, Front
 
 # -------------------------------------------------------------------------------- #
 def find_short_edges(
         mesh: Mesh,
-        front: Contour,
+        front: Front,
         min_length: float,
     ) -> list[tuple[int, int]]:
-    """
-    Find front edges strictly shorter than min_length, shortest first.
+    """Return directed front edges shorter than min_length, shortest first.
 
-    Parameters
-    ----------
-    mesh : Mesh
-        Mesh containing the vertex coordinates.
-    front : Contour
-        Closed front, including its last-to-first edge.
-    min_length : float
-        Finite, nonnegative length threshold.
-
-    Returns
-    -------
-    list[tuple[int, int]]
-        Directed pairs of mesh vertex indices, without modifying either input.
-        Adjacent pairs may share vertices. Equal lengths retain traversal order.
+    The caller supplies a finite nonnegative threshold. Connectivity comes
+    directly from front.entities.edge, including explicit closing edges.
+    Open fronts are supported. Equal lengths retain array order. Neither
+    input is modified; neighboring candidates may share vertices.
     """
     # ------------------------------------------------------------------------ #
-    if not np.isfinite(min_length) or min_length < 0:
-        raise ValueError("min_length must be finite and nonnegative.")
-    indices = front.indices[:front.num_indices].tolist()
-    candidates = []
-    for a, b in zip(indices, indices[1:] + indices[:1]):
-        length = np.linalg.norm(mesh.vertices[a] - mesh.vertices[b])
-        if length < min_length:
-            candidates.append((length, (a, b)))
+    # Measure explicit edges and preserve traversal order for equal lengths
+    edges = front.entities.edge
+    lengths = np.linalg.norm(mesh.points[edges[:, 1]] - mesh.points[edges[:, 0]], axis=1)
+    selected = np.flatnonzero(lengths < min_length)
+    selected = selected[np.argsort(lengths[selected], kind="stable")]
 
-    return [edge for _, edge in sorted(candidates, key=lambda item: item[0])]
+    # ------------------------------------------------------------------------ #
+    return [tuple(map(int, edge)) for edge in edges[selected]]
 
 # -------------------------------------------------------------------------------- #

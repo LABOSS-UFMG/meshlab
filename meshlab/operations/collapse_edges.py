@@ -1,72 +1,17 @@
 # -------------------------------------------------------------------------------- #
+from collections.abc import Sequence
+
 import numpy as np
 
-from typing import Sequence
-
-from meshlab.data.mesh import Mesh
-from meshlab.data.contour import Contour
+from meshlab.core import Mesh, Front
 
 # -------------------------------------------------------------------------------- #
-def collapse_edges(
-        mesh: Mesh,
-        front: Contour,
-        edges: Sequence[tuple[int, int]],
-    ) -> tuple[Contour, np.ndarray]:
-    """
-    Collapse each connected group of supplied edges to its vertex centroid.
-
-    Parameters
-    ----------
-    mesh : Mesh
-        Mesh to update using its vertex and cell mutation methods.
-    front : Contour
-        Closed front with at least three distinct vertex indices.
-    edges : Sequence[tuple[int, int]]
-        Directed edges of the input front, expressed in the ORIGINAL mesh
-        indices. Edges sharing vertices form one group, including chains
-        crossing the last-to-first edge. Input order does not affect the result.
-
-    Returns
-    -------
-    Contour
-        Updated front. The input contour is not modified.
-    np.ndarray
-        Original-to-final vertex index map. Use it to update other contours
-        before reusing them with this mesh. Collapsed endpoints share an index.
-
-    Notes
-    -----
-    Only supplied edges are considered; no lengths or thresholds are checked.
-    Each group becomes one vertex at the arithmetic mean of its distinct
-    ORIGINAL vertices. The group is accepted or skipped as a whole: no partial
-    collapse occurs if it invalidates neighboring cells or leaves fewer than
-    three front vertices. Groups are processed by their smallest original index.
-    Quadrilaterals become triangles;
-    triangles reduced to two vertices are removed. Affected cells are removed
-    and reinserted, so cell indices may change. Unrelated cell overlaps are not
-    checked. No Mesh storage arrays or counters are modified directly.
-    """
-    # ------------------------------------------------------------------------ #
-    # Validate all edge references before modifying the mesh
-    indices = front.indices[:front.num_indices].copy()
-    if len(indices) < 3 or len(np.unique(indices)) != len(indices):
-        raise ValueError("The front must contain at least three distinct vertices.")
-    if np.any(indices < 0) or np.any(indices >= mesh.num_vertices):
-        raise ValueError("The front contains an invalid vertex index.")
-    if not np.all(np.isfinite(mesh.vertices[:mesh.num_vertices])):
-        raise ValueError("Vertex coordinates must be finite.")
-    original_edges = set(zip(indices, np.roll(indices, -1)))
-    edges = [tuple(edge) for edge in edges]
-    if any(edge not in original_edges for edge in edges):
-        raise ValueError("Every supplied pair must be a directed edge of the input front.")
-    index_map = np.arange(mesh.num_vertices, dtype=np.int32)
-
-    # ------------------------------------------------------------------------ #
-    # Connected components collect all neighboring edges before any mutation
+def _groups(edges):
+    """Collect connected vertex groups in increasing minimum-index order."""
     neighbors = {}
     for a, b in edges:
-        neighbors.setdefault(a, set()).add(b)
-        neighbors.setdefault(b, set()).add(a)
+        neighbors.setdefault(int(a), set()).add(int(b))
+        neighbors.setdefault(int(b), set()).add(int(a))
     groups = []
     while neighbors:
         pending = [min(neighbors)]
@@ -76,76 +21,145 @@ def collapse_edges(
             if vertex not in group:
                 group.add(vertex)
                 pending.extend(neighbors.pop(vertex, ()))
-        original = sorted(group)
-        groups.append((original, mesh.vertices[original].mean(axis=0)))
+        groups.append(sorted(group))
+    return groups
 
-    for original, midpoint in groups:
-        members = np.sort(index_map[original])
-        if len(indices) - len(members) + 1 < 3:
+# -------------------------------------------------------------------------------- #
+def collapse_edges(
+        mesh: Mesh,
+        front: Front,
+        edges: Sequence[tuple[int, int]],
+    ) -> np.ndarray:
+    """Collapse connected groups of planar front edges to their centroids.
+
+    Parameters
+    ----------
+    mesh : Mesh
+        Planar mesh updated in place, including physical boundary indices.
+    front : Front
+        Front updated in place. Each component must be a simple open chain
+        or closed loop. Physical boundary and guided vertices are protected.
+    edges : sequence of (int, int)
+        Directed edges of this front, expressed in ORIGINAL mesh indices.
+        The caller supplies valid references. Empty input is a no-op.
+
+    Returns
+    -------
+    ndarray
+        Original-to-final vertex map, using mesh.int_dtype. Apply this map
+        to other fronts and their guide keys before using them again.
+
+    Notes
+    -----
+    Groups are processed by minimum original index, independent of input
+    order. Each centroid uses distinct original vertices. A group is skipped
+    as a whole if it touches a protected vertex, reduces a closed component
+    below three vertices (an open one below two), or invalidates an affected
+    surviving cell. Cells must remain strictly convex with their original
+    orientation. Quads can become triangles; cells reduced below three
+    vertices are removed, as in the legacy operation.
+
+    Acceptance checks are geometric algorithm decisions, not input validation.
+    Global overlaps, intersections with unrelated cells and collisions between
+    fronts are not checked. This is a local planar coarsening operation, not
+    a general topologically certified mesh simplifier. Cell indices can change.
+    Reacquire array views and recompute normals after calling this function.
+    """
+    # ------------------------------------------------------------------------ #
+    # Stage edits using original indices; compact storage only once at the end
+    if mesh.dim != 2:
+        raise NotImplementedError("Edge collapse is currently implemented only in 2D.")
+    index_map = np.arange(mesh.num_vertices, dtype=mesh.int_dtype)
+    if len(edges) == 0:
+        return index_map
+    points = mesh.points.copy()
+    front_edges = front.entities.edge.copy()
+    blocks = (mesh.cells.triangle, mesh.cells.quadrilateral)
+    cells = [row.copy() for block in blocks for row in block.connectivity]
+    protected = {int(i) for indices in mesh.boundaries.values() for i in indices}
+    protected.update(front.constraints.get("guides", {}))
+    components = _groups(front_edges)
+    accepted = False
+
+    for original in _groups(edges):
+        if protected.intersection(original):
             continue
-        a = int(members[0])
-        removed = members[1:]
-        affected = np.flatnonzero(np.any(
-            np.isin(mesh.cells[:mesh.num_cells], members), axis=1,
-        ))
-        replacements = []
+        members = np.asarray(original, dtype=mesh.int_dtype)
+        representative = members[0]
+        component = next(group for group in components if representative in group)
+        component_edges = front_edges[np.isin(front_edges[:, 0], component)]
+        vertices, counts = np.unique(component_edges, return_counts=True)
+        minimum = 3 if np.all(counts == 2) else 2
+        if len(vertices) - len(members) + 1 < minimum:
+            continue
+        midpoint = mesh.points[members].mean(axis=0)
+        replacements = {}
         valid = True
 
-        # Validate the complete group before committing any of its collapses
-        for cell_index in affected:
-            cell = mesh.cells[cell_index]
-            old = cell[cell >= 0]
-            replaced = np.where(np.isin(old, members), a, old)
+        # -------------------------------------------------------------------- #
+        # Accept or reject the entire group before changing staged geometry
+        for i, old in enumerate(cells):
+            if not np.any(np.isin(old, members)):
+                continue
+            replaced = np.where(np.isin(old, members), representative, old)
             reduced = replaced[replaced != np.roll(replaced, 1)]
             if len(np.unique(reduced)) != len(reduced):
                 valid = False
                 break
             if len(reduced) < 3:
+                replacements[i] = np.empty(0, dtype=mesh.int_dtype)
                 continue
-
-            points = mesh.vertices[reduced].copy()
-            points[reduced == a] = midpoint
-            old_points = mesh.vertices[old] - mesh.vertices[old[0]]
-            points -= points[0]
-            old_area = np.sum(old_points[:, 0] * np.roll(old_points[:, 1], -1)
-                              - old_points[:, 1] * np.roll(old_points[:, 0], -1))
-            directions = np.roll(points, -1, axis=0) - points
+            polygon = points[reduced].copy()
+            polygon[reduced == representative] = midpoint
+            polygon -= polygon[0]
+            old_points = points[old] - points[old[0]]
+            area = np.sum(old_points[:, 0] * np.roll(old_points[:, 1], -1)
+                          - old_points[:, 1] * np.roll(old_points[:, 0], -1))
+            directions = np.roll(polygon, -1, axis=0) - polygon
             following = np.roll(directions, -1, axis=0)
             cross = directions[:, 0] * following[:, 1] - directions[:, 1] * following[:, 0]
-            tolerance = 64 * np.finfo(float).eps * np.max(np.ptp(points, axis=0)) ** 2
-            if old_area == 0 or np.any(np.sign(old_area) * cross <= tolerance):
+            tolerance = 64 * np.finfo(mesh.float_dtype).eps * np.max(np.ptp(polygon, axis=0)) ** 2
+            if area == 0 or np.any(np.sign(area) * cross <= tolerance):
                 valid = False
                 break
-            replacements.append(reduced)
-
+            replacements[i] = reduced
         if not valid:
             continue
 
         # -------------------------------------------------------------------- #
-        # Detach cells first: remove_vertex would otherwise delete them itself
-        for cell_index in reversed(affected):
-            mesh.remove_cell(int(cell_index))
-        mesh.replace_vertex(a, midpoint)
-        indices = indices[~np.isin(indices, removed)]
-        index_map[np.isin(index_map, members)] = a
-        for b in reversed(removed):
-            mesh.remove_vertex(int(b))
-            for cell in replacements:
-                cell[cell > b] -= 1
-            indices[indices > b] -= 1
-            index_map[index_map > b] -= 1
-        for cell in replacements:
-            # Write padding too: add_cell can reuse a previously occupied row.
-            padded = np.full(mesh.cells_max_dim, -1, dtype=np.int32)
-            padded[:len(cell)] = cell
-            mesh.add_cell(padded)
+        # Merge the group and remove the resulting zero-length front edges
+        accepted = True
+        points[representative] = midpoint
+        index_map[members] = representative
+        for i, replacement in replacements.items():
+            cells[i] = replacement
+        front_edges = np.where(np.isin(front_edges, members), representative, front_edges)
+        front_edges = front_edges[front_edges[:, 0] != front_edges[:, 1]]
 
     # ------------------------------------------------------------------------ #
-    new_front = Contour(name=front.name, capacity=len(indices) + 1,
-                        increase_ratio=front.increase_ratio)
-    for index in indices:
-        new_front.add_index(int(index))
+    # Compact coordinates and rebuild the fixed-width cell blocks
+    if not accepted:
+        return index_map
+    retained = np.flatnonzero(index_map == np.arange(len(index_map)))
+    compact = np.empty(len(index_map), dtype=mesh.int_dtype)
+    compact[retained] = np.arange(len(retained), dtype=mesh.int_dtype)
+    index_map = compact[index_map]
+    mesh._points[:len(retained)] = points[retained]
+    mesh._num_vertices = len(retained)
+    for block in blocks:
+        block._num_cells = 0
+    for cell in cells:
+        if len(cell):
+            mesh.add_cell("triangle" if len(cell) == 3 else "quadrilateral", index_map[cell])
+    for name, indices in mesh.boundaries.items():
+        mesh.boundaries[name] = index_map[indices]
+    front.entities.edge = index_map[front_edges].astype(front.int_dtype)
+    if "guides" in front.constraints:
+        front.constraints["guides"] = {
+            int(index_map[index]): name for index, name in front.constraints["guides"].items()
+        }
 
-    return new_front, index_map
+    # ------------------------------------------------------------------------ #
+    return index_map
 
 # -------------------------------------------------------------------------------- #

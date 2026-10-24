@@ -1,66 +1,65 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from numbers import Number
+from meshlab.core.mesh import Mesh
+from meshlab.core.front import Front
 
 # -------------------------------------------------------------------------------- #
 def smooth_normals(
+        mesh: Mesh,
+        front: Front,
         normals: np.ndarray,
         relaxation: float | np.ndarray = 0.5,
     ) -> tuple[np.ndarray, np.ndarray]:
-    """
-    Apply Laplacian smoothing to a set of unit normals.
+    """Apply one simultaneous Laplacian smoothing step to planar unit normals.
 
     Parameters
     ----------
-    normals
-        Array of shape (N, 2) containing unit normals.
-    relaxation
-        Relaxation parameter. It may be either a scalar or an array with one
-        value per normal. Values should lie in the interval [0, 1].
+    mesh : Mesh
+        Two-dimensional mesh defining the floating-point storage type.
+    front : Front
+        Nonbranching front whose edges determine the neighboring vertices.
+    normals : ndarray, shape (N, 2)
+        Unit normals in ascending unique front vertex-index order.
+    relaxation : float | ndarray, shape (N,), default=0.5
+        Weight in [0, 1], uniform or per vertex in the same order.
 
     Returns
     -------
-    tuple[np.ndarray, np.ndarray]
-        Smoothed unit normals and the rotation angle (radians) applied to each
-        normal. Positive angles correspond to counter-clockwise rotation.
+    normals, rotation : tuple of ndarray
+        New unit normals and signed rotation angles in mesh.float_dtype.
+        Positive rotation is counterclockwise; input arrays remain unchanged.
+
+    Notes
+    -----
+    Uses the mean of incident neighbors, not circular array positions.
+    Open endpoints use their single neighbor; no guide or corner constraints
+    are imposed. The caller ensures compatible inputs and nonzero weighted
+    vectors. No input checks or geometry updates are performed.
     """
     # ------------------------------------------------------------------------ #
-    # Allocate memory to new normals and rotation
-    num_normals = normals.shape[0]
-
-    if isinstance(relaxation, Number):
-        relaxation = np.full(num_normals, relaxation, dtype=np.float64)
-
-    new_normals = np.empty_like(normals)
-    rotation = np.empty(num_normals, dtype=np.float64)
+    # Accumulate neighbor normals through the edge connectivity
+    indices, inverse = np.unique(front.entities.edge, return_inverse=True)
+    edges = inverse.reshape(-1, 2)
+    normals = np.asarray(normals, dtype=mesh.float_dtype)
+    neighbors = np.zeros_like(normals)
+    degree = np.zeros(len(indices), dtype=mesh.float_dtype)
+    np.add.at(neighbors, edges[:, 0], normals[edges[:, 1]])
+    np.add.at(neighbors, edges[:, 1], normals[edges[:, 0]])
+    np.add.at(degree, edges.ravel(), 1)
+    neighbors /= degree[:, None]
 
     # ------------------------------------------------------------------------ #
-    # Smooth normals
-    for i in range(num_normals):
+    # Blend simultaneously and normalize the resulting directions
+    alpha = np.asarray(relaxation, dtype=mesh.float_dtype)[..., None]
+    new_normals = (1.0 - alpha) * normals + alpha * neighbors
+    new_normals /= np.linalg.norm(new_normals, axis=1)[:, None]
 
-        i_prev = (i - 1) % num_normals
-        i_next = (i + 1) % num_normals
-
-        alpha = relaxation[i]
-
-        normal = (
-            (1.0 - alpha) * normals[i]
-            + 0.5 * alpha * (normals[i_prev] + normals[i_next])
-        )
-
-        normal /= np.linalg.norm(normal)
-
-        new_normals[i] = normal
-
-        # Signed rotation angle
-        cross = (
-            normals[i, 0] * normal[1]
-            - normals[i, 1] * normal[0]
-        )
-        dot = np.dot(normals[i], normal)
-
-        rotation[i] = np.arctan2(cross, dot)
+    # ------------------------------------------------------------------------ #
+    # Compute signed rotation relative to the input directions
+    cross = normals[:, 0] * new_normals[:, 1] - normals[:, 1] * new_normals[:, 0]
+    dot = np.sum(normals * new_normals, axis=1)
+    rotation = np.arctan2(cross, dot)
 
     # ------------------------------------------------------------------------ #
     return new_normals, rotation
