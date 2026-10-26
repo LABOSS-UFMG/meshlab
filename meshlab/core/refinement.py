@@ -24,14 +24,6 @@ class Refinement():
         For Contour, expands the fine region outwards from its perimeter.
     transition : float, default=1.0
         Positive width of the smooth return to the unrefined local size.
-
-    Notes
-    -----
-    These fields store configuration only. Validation runs at construction.
-    Refinement never requests coarser elements than the base mesh size.
-    Geometry coordinates and all distances use the same units. Current Gmsh
-    export supports 2D reference geometries; geometry names need not be unique
-    because references do not create physical groups or fixed mesh nodes.
     """
     geometry: Point | Curve | Contour
     size: float

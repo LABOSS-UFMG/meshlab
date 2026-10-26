@@ -1,4 +1,5 @@
 # -------------------------------------------------------------------------------- #
+from meshlab.operations.split_curve import split_curve
 from meshlab.operations.find_short_edges import find_short_edges
 from meshlab.operations.collapse_edges import collapse_edges
 from meshlab.operations.compute_angles import compute_angles
@@ -10,6 +11,7 @@ from meshlab.operations.initialize_front import initialize_front
 
 # -------------------------------------------------------------------------------- #
 __all__ = [
+    "split_curve",
     "find_short_edges",
     "collapse_edges",
     "compute_angles",

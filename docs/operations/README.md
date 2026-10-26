@@ -32,3 +32,7 @@ Normais, ângulos e alturas por nó seguem `np.unique(front.entities.edge)`: ín
 `advance_front` e `collapse_edges` modificam a mesma instância de frente. Após colapso, outras frentes precisam ser remapeadas pelo chamador. As curvas geométricas não usam índices globais e não são remapeadas.
 
 Ver [cálculos planares](planar.md), [colapso](collapse_edges.md) e [descrição do domínio](domain.md).
+
+## Separação geométrica de curvas
+
+`split_curve(curve, start_index, end_index, start_direction, end_direction, radius)` separa uma curva fechada usando segmentos ligados por um arco tangente. Retorna duas curvas independentes, antes da montagem da malha. Ver [cálculo e contratos](split_curve.md).
