@@ -1,0 +1,287 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : changeDictionary -constant
+Date   : Oct 26 2026
+Time   : 16:21:20
+Host   : "user-Precision-7530"
+PID    : 11
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+--> FOAM Warning : 
+changeDictionary has been superseded by foamDictionary and is now deprecated.
+
+Create time
+
+Create mesh for time = constant
+
+Reading "changeDictionaryDict"
+
+Read dictionary "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/changeDictionaryDict" with replacements for dictionaries 1(boundary)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 
+11
+(
+wedge_front
+wedge_back
+spike
+outlet
+duct_inner
+inlet
+duct_outer
+ambient_top
+outer_lip
+outer_casing
+ambient_inlet
+)
+
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 
+2
+(
+wedge_(front|back)
+(spike|duct_inner|duct_outer|outer_lip|outer_casing)
+)
+
+fieldDict:
+{
+    wedge_front
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          30170;
+        startFace       45838;
+        inGroups        1 ( wedge );
+    }
+    wedge_back
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          30170;
+        startFace       76008;
+        inGroups        1 ( wedge );
+    }
+    spike
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          110;
+        startFace       106178;
+        inGroups        1 ( wall );
+    }
+    outlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          50;
+        startFace       106288;
+    }
+    duct_inner
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          20;
+        startFace       106338;
+        inGroups        1 ( wall );
+    }
+    inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          40;
+        startFace       106358;
+    }
+    duct_outer
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          50;
+        startFace       106398;
+        inGroups        1 ( wall );
+    }
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          70;
+        startFace       106448;
+    }
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          24;
+        startFace       106518;
+        inGroups        1 ( wall );
+    }
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       106542;
+        inGroups        1 ( wall );
+    }
+    ambient_inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          80;
+        startFace       106602;
+    }
+}
+
+Writing modified boundary
+Create mesh for time = 0
+
+Reading "changeDictionaryDict"
+
+Read dictionary "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/changeDictionaryDict" with replacements for dictionaries 1(boundary)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 
+11
+(
+wedge_front
+wedge_back
+spike
+outlet
+duct_inner
+inlet
+duct_outer
+ambient_top
+outer_lip
+outer_casing
+ambient_inlet
+)
+
+Extracted patch groups:
+    group wall with patches 
+5
+(
+spike
+duct_inner
+duct_outer
+outer_lip
+outer_casing
+)
+
+    group wedge with patches 
+2
+(
+wedge_front
+wedge_back
+)
+
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 
+2
+(
+wedge_(front|back)
+(spike|duct_inner|duct_outer|outer_lip|outer_casing)
+)
+
+fieldDict:
+{
+    wedge_front
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          30170;
+        startFace       45838;
+        inGroups        1 ( wedge );
+    }
+    wedge_back
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          30170;
+        startFace       76008;
+        inGroups        1 ( wedge );
+    }
+    spike
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          110;
+        startFace       106178;
+        inGroups        1 ( wall );
+    }
+    outlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          50;
+        startFace       106288;
+    }
+    duct_inner
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          20;
+        startFace       106338;
+        inGroups        1 ( wall );
+    }
+    inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          40;
+        startFace       106358;
+    }
+    duct_outer
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          50;
+        startFace       106398;
+        inGroups        1 ( wall );
+    }
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          70;
+        startFace       106448;
+    }
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          24;
+        startFace       106518;
+        inGroups        1 ( wall );
+    }
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       106542;
+        inGroups        1 ( wall );
+    }
+    ambient_inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          80;
+        startFace       106602;
+    }
+}
+
+Writing modified boundary
+
+End
+

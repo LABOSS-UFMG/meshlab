@@ -1,0 +1,125 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : checkMesh -allTopology -allGeometry
+Date   : Oct 26 2026
+Time   : 16:21:20
+Host   : "user-Precision-7530"
+PID    : 12
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Enabling all (cell, face, edge, point) topology checks.
+
+Enabling all geometry checks.
+
+Time = 0s
+
+Mesh stats
+    points:           32475
+    internal points:  0
+    edges:            108986
+    internal edges:   15669
+    internal edges using one boundary point:   0
+    internal edges using two boundary points:  15669
+    faces:            106682
+    internal faces:   45838
+    cells:            30170
+    faces per cell:   5.055352999668545
+    boundary patches: 11
+    point zones:      0
+    face zones:       0
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     1790
+    prisms:        28110
+    wedges:        0
+    pyramids:      150
+    tet wedges:    0
+    tetrahedra:    120
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Topological cell zip-up check OK.
+    Face-face connectivity OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+    Patch               Faces    Points   Surface topology                  
+    wedge_front         30170    16303    ok (non-closed singly connected)  
+    wedge_back          30170    16303    ok (non-closed singly connected)  
+    spike               110      221      ok (non-closed singly connected)  
+    outlet              50       101      ok (non-closed singly connected)  
+    duct_inner          20       42       ok (non-closed singly connected)  
+    inlet               40       82       ok (non-closed singly connected)  
+    duct_outer          50       102      ok (non-closed singly connected)  
+    ambient_top         70       142      ok (non-closed singly connected)  
+    outer_lip           24       50       ok (non-closed singly connected)  
+    outer_casing        60       122      ok (non-closed singly connected)  
+    ambient_inlet       80       162      ok (non-closed singly connected)  
+
+Checking geometry...
+    Overall domain bounding box (-0.05000000000000004 0 -0.021809693682668) (1.06 0.4995241107909289 0.021809693682668)
+    Patch bounding boxes
+        wedge_front          (-0.05 0 -0.021809693682668) (1.06 0.4995241107909289 0)
+        wedge_back           (-0.05000000000000004 0 0) (1.06 0.4995241107909289 0.021809693682668)
+        spike                (0.01000000000000001 0 -0.00130858162096008) (0.06000000000000005 0.02997144664745573 0.00130858162096008)
+        outlet               (1.06 0 -0.021809693682668) (1.06 0.4995241107909289 0.021809693682668)
+        duct_inner           (0 0.02997144664745573 -0.00130858162096008) (0.01000000000000007 0.02997144664745573 0.00130858162096008)
+        inlet                (0 0.02997144664745573 -0.00174477549461344) (9.540979117872439e-17 0.03996192886327431 0.00174477549461344)
+        duct_outer           (0 0.03996192886327431 -0.00174477549461344) (0.01000000000000007 0.03996192886327431 0.00174477549461344)
+        ambient_top          (-0.05000000000000004 0.4995241107909289 -0.021809693682668) (1.06 0.4995241107909289 0.021809693682668)
+        outer_lip            (0.01000000000000001 0.03996192886327431 -0.001875633656709448) (0.01000000000000007 0.04295907352801989 0.001875633656709448)
+        outer_casing         (-0.05000000000000004 0.04295907352801989 -0.001875633656709448) (0.01000000000000007 0.04295907352801989 0.001875633656709448)
+        ambient_inlet        (-0.05000000000000004 0.04295907352801989 -0.021809693682668) (-0.05 0.4995241107909289 0.021809693682668)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Wedge wedge_front with angle 2.499999999115481 degrees
+    Wedge wedge_back with angle 2.499999999115335 degrees
+    All edges aligned with or perpendicular to non-empty directions.
+    Max cell openness = 9.535591269016409e-16 OK.
+    Max aspect ratio = 25.73693138256589 OK.
+    Minimum face area = 1.91521603060964e-10. Maximum face area = 0.0008105427662116238.  Face area magnitudes OK.
+    Min volume = 2.178893568683046e-13. Max volume = 5.403633800876217e-06.  Total volume = 0.01208762720277239.  Cell volumes OK.
+    Mesh non-orthogonality Max: 53.66235682525823 average: 4.197667637288653
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 2.447139869519462 OK.
+    Coupled point location match (average 0) OK.
+    Face tets OK.
+    Min/max edge length = 1.999999999986555e-05 0.043619387365336 OK.
+    All angles in faces OK.
+    Face flatness (1 = flat, 0 = butterfly) : min = 0.9999999999999988  average = 1
+    All face flatness OK.
+    Cell determinant (wellposedness) : minimum: 0.01898126616811975 average: 2.091092316832807
+    Cell determinant check OK.
+    Concave cell check OK.
+    Face interpolation weight : minimum: 0.1381401074809884 average: 0.4780947819384628
+    Face interpolation weight check OK.
+    Face volume ratio : minimum: 0.1887052209175616 average: 0.9149783675185602
+    Face volume ratio check OK.
+
+Mesh OK.
+
+End
+

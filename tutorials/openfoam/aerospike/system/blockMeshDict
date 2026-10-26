@@ -1,0 +1,442 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// Coordinates are given in metres.
+convertToMeters 1.0;
+
+
+// ************************************************************************* //
+// USER PARAMETERS
+// ************************************************************************* //
+//
+// Axisymmetric annular aerospike represented by a one-cell wedge.
+//
+// Meridional geometry:
+//
+//                         ambient
+//       r = Hexternal  -------------------------------
+//
+//       r = rDuctOuter  =================|  outer lip
+//                         annular duct    |\
+//       r = rDuctInner  =================| \  aerospike
+//                                           \________
+//                                                   | base
+//       r = 0                  axis -----------------------------
+//
+// The annular duct occupies rDuctInner <= r <= rDuctOuter from x=0 to
+// x=Lduct.  At x=Lduct the outer wall ends and the gas expands externally
+// over the aerospike surface.  The spike is truncated at r=rSpikeEnd.
+// Downstream of the truncated base the computational domain includes the
+// axis, allowing the plume/base region to develop naturally.
+//
+// IMPORTANT geometric constraints:
+//   Hexternal > rDuctOuter > rDuctInner > rSpikeEnd > 0
+//
+
+// ------------------------------------------------------------------------- //
+// Annular duct
+// ------------------------------------------------------------------------- //
+
+hDuct           0.030;      // radius of LOWER/INNER duct wall from axis [m]
+ductHeight      0.010;      // radial height of annular duct [m]
+Lduct           0.010;      // constant-area duct length [m]
+
+// ------------------------------------------------------------------------- //
+// Aerospike
+// ------------------------------------------------------------------------- //
+
+LSpike          0.050;      // spike length from annular exit to truncation [m]
+rSpikeEnd       0.005;      // radius of truncated spike base [m]
+
+thetaSpikeStart 20.0;       // downward surface angle at spike start [deg]
+thetaSpikeEnd   0.0;        // downward surface angle at truncated end [deg]
+
+// The spike contour is a cubic Hermite curve.  The two angles above control
+// dr/dx at its beginning and end.  A positive angle means that r decreases
+// in the downstream direction.
+
+// ------------------------------------------------------------------------- //
+// External plume domain
+// ------------------------------------------------------------------------- //
+
+Lexternal       1.000;      // length downstream of truncated spike [m]
+Hexternal       0.500;      // radial far-field distance from axis [m]
+
+// Full angular thickness of the axisymmetric wedge.
+wedgeAngle      5.0;        // [deg]
+
+// ------------------------------------------------------------------------- //
+// Mesh resolution
+// ------------------------------------------------------------------------- //
+
+nDuctRadial     30;         // cells through annular duct height
+nDuctAxial      10;         // cells along constant-area duct
+
+nSpikeAxial     50;        // cells along the aerospike/plume region
+nAmbientRadial  90;         // cells from rDuctOuter to Hexternal
+
+nCoreRadial     10;         // axis -> rSpikeEnd downstream of spike base
+nExternalAxial  300;        // cells from spike base to downstream outlet
+
+// simpleGrading values
+gDuctRadial     1.0;
+gDuctAxial      2.0;
+gSpikeAxial     3.0;
+gAmbientRadial  20.0;
+gCoreRadial     1.0;
+gExternalAxial  3.0;
+
+
+// ************************************************************************* //
+// DERIVED GEOMETRY
+// ************************************************************************* //
+
+// Duct radii
+rDuctInner      $hDuct;
+rDuctOuter      #calc "$hDuct + $ductHeight";
+
+// Axial stations
+x0              0.0;
+x1              $Lduct;                       // annular nozzle exit / spike start
+x2              #calc "$x1 + $LSpike";       // truncated spike base
+x3              #calc "$x2 + $Lexternal";    // downstream boundary
+
+// Wedge geometry
+aWedge          #calc "degToRad(0.5*$wedgeAngle)";
+cW              #calc "cos($aWedge)";
+sW              #calc "sin($aWedge)";
+
+// Aerospike end slopes for cubic Hermite interpolation
+aSpikeStart     #calc "degToRad($thetaSpikeStart)";
+aSpikeEnd       #calc "degToRad($thetaSpikeEnd)";
+mSpikeStart     #calc "-tan($aSpikeStart + 0.0)";
+mSpikeEnd       #calc "-tan($aSpikeEnd + 0.0)";
+
+// Coordinates associated with the principal radii
+
+yDi             #calc "$rDuctInner*$cW";
+zDi             #calc "$rDuctInner*$sW";
+mzDi            #calc "-$zDi";
+
+yDo             #calc "$rDuctOuter*$cW";
+zDo             #calc "$rDuctOuter*$sW";
+mzDo            #calc "-$zDo";
+
+ySe             #calc "$rSpikeEnd*$cW";
+zSe             #calc "$rSpikeEnd*$sW";
+mzSe            #calc "-$zSe";
+
+yExt            #calc "$Hexternal*$cW";
+zExt            #calc "$Hexternal*$sW";
+mzExt           #calc "-$zExt";
+
+// ------------------------------------------------------------------------- //
+// Intermediate points of the cubic Hermite aerospike contour.
+// The spline uses nine internal points (10%, 20%, ..., 90% of LSpike).
+// Every point is derived from the user parameters above.
+// ------------------------------------------------------------------------- //
+
+xS1             #calc "$x1 + 0.1*$LSpike";
+rS1             #calc "0.972000*$rDuctInner + 0.081000*$LSpike*$mSpikeStart + 0.028000*$rSpikeEnd + (-0.009000)*$LSpike*$mSpikeEnd";
+yS1             #calc "$rS1*$cW";
+zS1             #calc "$rS1*$sW";
+mzS1            #calc "-$zS1";
+
+xS2             #calc "$x1 + 0.2*$LSpike";
+rS2             #calc "0.896000*$rDuctInner + 0.128000*$LSpike*$mSpikeStart + 0.104000*$rSpikeEnd + (-0.032000)*$LSpike*$mSpikeEnd";
+yS2             #calc "$rS2*$cW";
+zS2             #calc "$rS2*$sW";
+mzS2            #calc "-$zS2";
+
+xS3             #calc "$x1 + 0.3*$LSpike";
+rS3             #calc "0.784000*$rDuctInner + 0.147000*$LSpike*$mSpikeStart + 0.216000*$rSpikeEnd + (-0.063000)*$LSpike*$mSpikeEnd";
+yS3             #calc "$rS3*$cW";
+zS3             #calc "$rS3*$sW";
+mzS3            #calc "-$zS3";
+
+xS4             #calc "$x1 + 0.4*$LSpike";
+rS4             #calc "0.648000*$rDuctInner + 0.144000*$LSpike*$mSpikeStart + 0.352000*$rSpikeEnd + (-0.096000)*$LSpike*$mSpikeEnd";
+yS4             #calc "$rS4*$cW";
+zS4             #calc "$rS4*$sW";
+mzS4            #calc "-$zS4";
+
+xS5             #calc "$x1 + 0.5*$LSpike";
+rS5             #calc "0.500000*$rDuctInner + 0.125000*$LSpike*$mSpikeStart + 0.500000*$rSpikeEnd + (-0.125000)*$LSpike*$mSpikeEnd";
+yS5             #calc "$rS5*$cW";
+zS5             #calc "$rS5*$sW";
+mzS5            #calc "-$zS5";
+
+xS6             #calc "$x1 + 0.6*$LSpike";
+rS6             #calc "0.352000*$rDuctInner + 0.096000*$LSpike*$mSpikeStart + 0.648000*$rSpikeEnd + (-0.144000)*$LSpike*$mSpikeEnd";
+yS6             #calc "$rS6*$cW";
+zS6             #calc "$rS6*$sW";
+mzS6            #calc "-$zS6";
+
+xS7             #calc "$x1 + 0.7*$LSpike";
+rS7             #calc "0.216000*$rDuctInner + 0.063000*$LSpike*$mSpikeStart + 0.784000*$rSpikeEnd + (-0.147000)*$LSpike*$mSpikeEnd";
+yS7             #calc "$rS7*$cW";
+zS7             #calc "$rS7*$sW";
+mzS7            #calc "-$zS7";
+
+xS8             #calc "$x1 + 0.8*$LSpike";
+rS8             #calc "0.104000*$rDuctInner + 0.032000*$LSpike*$mSpikeStart + 0.896000*$rSpikeEnd + (-0.128000)*$LSpike*$mSpikeEnd";
+yS8             #calc "$rS8*$cW";
+zS8             #calc "$rS8*$sW";
+mzS8            #calc "-$zS8";
+
+xS9             #calc "$x1 + 0.9*$LSpike";
+rS9             #calc "0.028000*$rDuctInner + 0.009000*$LSpike*$mSpikeStart + 0.972000*$rSpikeEnd + (-0.081000)*$LSpike*$mSpikeEnd";
+yS9             #calc "$rS9*$cW";
+zS9             #calc "$rS9*$sW";
+mzS9            #calc "-$zS9";
+
+
+// ************************************************************************* //
+// VERTICES
+// ************************************************************************* //
+//
+// M = negative-z wedge plane
+// P = positive-z wedge plane
+// A = axis (collapsed vertex pair)
+//
+
+vertices
+(
+    // x0 - annular-duct inlet
+    ($x0 $yDi $mzDi)       // 0  inner M
+    ($x0 $yDi $zDi)        // 1  inner P
+    ($x0 $yDo $mzDo)       // 2  outer M
+    ($x0 $yDo $zDo)        // 3  outer P
+
+    // x1 - annular exit / spike start / beginning of ambient region
+    ($x1 $yDi $mzDi)       // 4  spike start M
+    ($x1 $yDi $zDi)        // 5  spike start P
+    ($x1 $yDo $mzDo)       // 6  outer lip M
+    ($x1 $yDo $zDo)        // 7  outer lip P
+    ($x1 $yExt $mzExt)     // 8  far field M
+    ($x1 $yExt $zExt)      // 9  far field P
+
+    // x2 - truncated spike base
+    ($x2 0 0)              // 10 axis
+    ($x2 $ySe $mzSe)       // 11 spike end M
+    ($x2 $ySe $zSe)        // 12 spike end P
+    ($x2 $yDo $mzDo)       // 13 radial split at rDuctOuter M
+    ($x2 $yDo $zDo)        // 14 radial split at rDuctOuter P
+    ($x2 $yExt $mzExt)     // 15 far field M
+    ($x2 $yExt $zExt)      // 16 far field P
+
+    // x3 - downstream outlet
+    ($x3 0 0)              // 17 axis
+    ($x3 $ySe $mzSe)       // 18 inner radial split M
+    ($x3 $ySe $zSe)        // 19 inner radial split P
+    ($x3 $yDo $mzDo)       // 20 middle radial split M
+    ($x3 $yDo $zDo)        // 21 middle radial split P
+    ($x3 $yExt $mzExt)     // 22 far field M
+    ($x3 $yExt $zExt)      // 23 far field P
+);
+
+
+// ************************************************************************* //
+// BLOCKS
+// ************************************************************************* //
+//
+// Local directions for annular blocks:
+//   1st: radial
+//   2nd: wedge thickness (one cell)
+//   3rd: axial
+//
+
+blocks
+(
+    // 1) Constant-area annular duct
+    hex (0 2 3 1   4 6 7 5)
+        ($nDuctRadial 1 $nDuctAxial)
+        simpleGrading ($gDuctRadial 1 $gDuctAxial)
+
+    // 2) Gas/plume region directly above the aerospike
+    //    r = rSpike(x) -> rDuctOuter
+    hex (4 6 7 5   11 13 14 12)
+        ($nDuctRadial 1 $nSpikeAxial)
+        simpleGrading ($gDuctRadial 1 $gSpikeAxial)
+
+    // 3) External ambient region beside the expanding jet
+    //    r = rDuctOuter -> Hexternal
+    hex (6 8 9 7   13 15 16 14)
+        ($nAmbientRadial 1 $nSpikeAxial)
+        simpleGrading ($gAmbientRadial 1 $gSpikeAxial)
+
+    // 4) Wake/base region downstream of the truncated spike
+    //    axis -> rSpikeEnd
+    hex (10 11 12 10   17 18 19 17)
+        ($nCoreRadial 1 $nExternalAxial)
+        simpleGrading ($gCoreRadial 1 $gExternalAxial)
+
+    // 5) Downstream middle region
+    //    rSpikeEnd -> rDuctOuter
+    hex (11 13 14 12   18 20 21 19)
+        ($nDuctRadial 1 $nExternalAxial)
+        simpleGrading ($gDuctRadial 1 $gExternalAxial)
+
+    // 6) Downstream far-field region
+    //    rDuctOuter -> Hexternal
+    hex (13 15 16 14   20 22 23 21)
+        ($nAmbientRadial 1 $nExternalAxial)
+        simpleGrading ($gAmbientRadial 1 $gExternalAxial)
+);
+
+
+// ************************************************************************* //
+// CURVED EDGES
+// ************************************************************************* //
+// Cubic Hermite aerospike contour represented by blockMesh splines on both
+// wedge planes.
+
+edges
+(
+    spline 4 11
+    (
+        ($xS1 $yS1 $mzS1)
+        ($xS2 $yS2 $mzS2)
+        ($xS3 $yS3 $mzS3)
+        ($xS4 $yS4 $mzS4)
+        ($xS5 $yS5 $mzS5)
+        ($xS6 $yS6 $mzS6)
+        ($xS7 $yS7 $mzS7)
+        ($xS8 $yS8 $mzS8)
+        ($xS9 $yS9 $mzS9)
+    )
+
+    spline 5 12
+    (
+        ($xS1 $yS1 $zS1)
+        ($xS2 $yS2 $zS2)
+        ($xS3 $yS3 $zS3)
+        ($xS4 $yS4 $zS4)
+        ($xS5 $yS5 $zS5)
+        ($xS6 $yS6 $zS6)
+        ($xS7 $yS7 $zS7)
+        ($xS8 $yS8 $zS8)
+        ($xS9 $yS9 $zS9)
+    )
+);
+
+
+// ************************************************************************* //
+// BOUNDARY PATCHES
+// ************************************************************************* //
+// Patch names are intentionally kept the same as in the previous nozzle case
+// so the existing 0/U, 0/p and 0/T files remain compatible.
+
+boundary
+(
+    // Annular inlet
+    inlet
+    {
+        type patch;
+        faces
+        (
+            (0 2 3 1)
+        );
+    }
+
+    // Full downstream boundary
+    outlet
+    {
+        type patch;
+        faces
+        (
+            (17 18 19 17)
+            (18 20 21 19)
+            (20 22 23 21)
+        );
+    }
+
+    // All solid engine/aerospike surfaces use the SAME patch name as before.
+    wall
+    {
+        type wall;
+        faces
+        (
+            // inner wall of the annular duct
+            (1 0 4 5)
+
+            // outer wall of the annular duct
+            (3 2 6 7)
+
+            // curved aerospike surface
+            (5 4 11 12)
+
+            // truncated aerospike base
+            (10 11 12 10)
+        );
+    }
+
+    // Open ambient boundary: radial opening at the annular exit plus the
+    // outer far-field boundary of the external plume domain.
+    ambient
+    {
+        type patch;
+        faces
+        (
+            (6 8 9 7)
+            (9 8 15 16)
+            (16 15 22 23)
+        );
+    }
+
+    wedgePlus
+    {
+        type wedge;
+        faces
+        (
+            (1 3 7 5)
+            (5 7 14 12)
+            (7 9 16 14)
+            (10 12 19 17)
+            (12 14 21 19)
+            (14 16 23 21)
+        );
+    }
+
+    wedgeMinus
+    {
+        type wedge;
+        faces
+        (
+            (0 4 6 2)
+            (4 11 13 6)
+            (6 13 15 8)
+            (10 17 18 11)
+            (11 18 20 13)
+            (13 20 22 15)
+        );
+    }
+
+    // Axis exists only downstream of the truncated aerospike base.
+    axis
+    {
+        type empty;
+        faces
+        (
+            (10 17 17 10)
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

@@ -1,0 +1,34 @@
+FoamFile
+{
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U;
+}
+
+#include "include/initialConditions"
+
+dimensions      [0 1 -1 0 0 0 0];
+internalField   uniform $UAmbient;
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform $UInlet;
+    }
+    "(outlet|ambient_top|ambient_inlet)"
+    {
+        type            pressureInletOutletVelocity;
+        value           uniform $UAmbient;
+    }
+    "(spike|duct_inner|duct_outer|outer_lip|outer_casing)"
+    {
+        type            noSlip;
+    }
+    "wedge_(front|back)"
+    {
+        type            wedge;
+    }
+}

@@ -1,0 +1,9 @@
+// Static inlet conditions retained from the original case (approximately Mach 1).
+pInlet      1.05656e6;       // Pa
+TInlet      2500;           // K
+UInlet      (1002.4 0 0);   // m/s
+
+// Initially quiescent ambient gas.
+pAmbient    101325;         // Pa
+TAmbient    300;            // K
+UAmbient    (0 0 0);        // m/s

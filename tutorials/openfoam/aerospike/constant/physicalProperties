@@ -1,0 +1,60 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      physicalProperties;
+}
+
+thermoType
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+// Ideal-gas properties used for the first nozzle case.
+//
+// These values are approximately air-like and give gamma ~= 1.4:
+//   R = Ru/M ~= 287 J/(kg K)
+//   Cv = Cp - R
+//   gamma = Cp/Cv ~= 1.4
+//
+// For a real rocket exhaust, replace molWeight and Cp with values
+// representative of the combustion products (or later use a more
+// sophisticated thermodynamic model).
+
+mixture
+{
+    specie
+    {
+        molWeight       28.96;      // kg/kmol
+    }
+
+    thermodynamics
+    {
+        Cp              1004.5;     // J/(kg K)
+        hf              0;          // J/kg
+    }
+
+    transport
+    {
+        // Dynamic viscosity for the laminar boundary-layer calculation.
+        mu              1e-5;          // Pa s
+        Pr              1;
+    }
+}
+
+// ************************************************************************* //

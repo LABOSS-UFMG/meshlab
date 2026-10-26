@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : gmshToFoam constant/gmsh/aerospike.msh
+Date   : Oct 26 2026
+Time   : 16:20:35
+Host   : "user-Precision-7530"
+PID    : 10
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:12
+    Surface 2	wedge_front
+    Surface 3	wedge_back
+    Surface 4	spike
+    Surface 5	duct_inner
+    Surface 6	inlet
+    Surface 7	duct_outer
+    Surface 8	outlet
+    Surface 9	ambient_top
+    Surface 10	outer_lip
+    Surface 11	outer_casing
+    Surface 12	ambient_inlet
+    Volume 1	fluid
+
+Starting to read points at line 20
+Vertices to be read:32475
+Vertices read:32475
+
+Starting to read cells at line 32498
+Cells to be read:91014
+
+Mapping region 2 to Foam patch 0
+Mapping region 3 to Foam patch 1
+Mapping region 4 to Foam patch 2
+Mapping region 8 to Foam patch 3
+Mapping region 5 to Foam patch 4
+Mapping region 6 to Foam patch 5
+Mapping region 7 to Foam patch 6
+Mapping region 9 to Foam patch 7
+Mapping region 10 to Foam patch 8
+Mapping region 11 to Foam patch 9
+Mapping region 12 to Foam patch 10
+Mapping region 1 to Foam cellZone 0
+Cells:
+    total:30170
+    hex  :1790
+    prism:28110
+    pyr  :150
+    tet  :120
+
+CellZones:
+Zone	Size
+    0	30170
+
+Skipping tag  at line 123515
+Patch 0 gets name wedge_front
+Patch 1 gets name wedge_back
+Patch 2 gets name spike
+Patch 3 gets name outlet
+Patch 4 gets name duct_inner
+Patch 5 gets name inlet
+Patch 6 gets name duct_outer
+Patch 7 gets name ambient_top
+Patch 8 gets name outer_lip
+Patch 9 gets name outer_casing
+Patch 10 gets name ambient_inlet
+
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+Finding faces of patch 3
+Finding faces of patch 4
+Finding faces of patch 5
+Finding faces of patch 6
+Finding faces of patch 7
+Finding faces of patch 8
+Finding faces of patch 9
+Finding faces of patch 10
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone fluid and cellSet
+End
+

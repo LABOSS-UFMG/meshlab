@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+
+// Central-upwind flux used by shockFluid.
+// Kurganov is generally the preferred starting point.
+fluxScheme      Kurganov;
+
+ddtSchemes
+{
+    default         localEuler;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+
+    // Limiting the velocity gradient improves robustness near shocks and
+    // strong nozzle gradients.
+    grad(U)         cellLimited Gauss linear 1;
+}
+
+divSchemes
+{
+    default         none;
+
+    // shockFluid constructs the inviscid convective fluxes directly.
+    // This term is required for the viscous stress contribution.
+    div(tauMC)      Gauss linear;
+
+    // These entries are only used if a turbulence model requiring transport
+    // equations is activated. They are harmless for a laminar case.
+    div(phi,k)          Gauss upwind;
+    div(phi,omega)      Gauss upwind;
+    div(phi,epsilon)    Gauss upwind;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+    default             linear;
+
+    // MUSCL-type reconstruction of primitive variables on the two sides
+    // of each face. These entries are central to shockFluid.
+    reconstruct(rho)    vanLeer;
+    reconstruct(U)      vanLeerV;
+    reconstruct(T)      vanLeer;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}
+
+wallDist
+{
+    method          meshWave;
+}
+
+// ************************************************************************* //

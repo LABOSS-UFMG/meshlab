@@ -1,0 +1,35 @@
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+
+#include "include/initialConditions"
+
+dimensions      [0 0 0 1 0 0 0];
+internalField   uniform $TAmbient;
+
+boundaryField
+{
+    inlet
+    {
+        type            fixedValue;
+        value           uniform $TInlet;
+    }
+    "(outlet|ambient_top|ambient_inlet)"
+    {
+        type            inletOutlet;
+        inletValue      uniform $TAmbient;
+        value           uniform $TAmbient;
+    }
+    "(spike|duct_inner|duct_outer|outer_lip|outer_casing)"
+    {
+        type            zeroGradient;
+    }
+    "wedge_(front|back)"
+    {
+        type            wedge;
+    }
+}

@@ -1,0 +1,79 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      Ma;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    wedge_front
+    {
+        type            wedge;
+    }
+    wedge_back
+    {
+        type            wedge;
+    }
+    spike
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    outlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    duct_inner
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    inlet
+    {
+        type            calculated;
+        value           uniform 0.9999039555228973;
+    }
+    duct_outer
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    ambient_top
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    outer_lip
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    outer_casing
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    ambient_inlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

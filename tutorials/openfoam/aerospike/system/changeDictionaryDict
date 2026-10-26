@@ -1,0 +1,24 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      changeDictionaryDict;
+}
+
+// Keep the Gmsh names and face addressing; change only patch types.
+boundary
+{
+    "wedge_(front|back)"
+    {
+        type            wedge;
+        physicalType    wedge;
+        inGroups        1(wedge);
+    }
+    "(spike|duct_inner|duct_outer|outer_lip|outer_casing)"
+    {
+        type            wall;
+        physicalType    wall;
+        inGroups        1(wall);
+    }
+}
