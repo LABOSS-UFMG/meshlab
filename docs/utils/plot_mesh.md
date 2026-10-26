@@ -28,7 +28,11 @@ figure.savefig("bodies.png", dpi=150, bbox_inches="tight")
 
 O [tutorial t0](../../tutorials/t0.ipynb) demonstra a definição de círculo, quadrado e contorno externo retangular, incluindo a montagem e visualização. As curvas laterais usam nomes únicos `laterals_upper` e `laterals_lower`.
 
-A implementação antiga em `visualization/plot_mesh.py` continua como referência e depende das estruturas legadas removidas. O ponto de entrada atualizado é `meshlab.utils.plot_mesh`.
+## Cores e interfaces expostas
+
+As arestas das células usam `dimgrey`, com largura de 0.8 ponto. Fronteiras físicas usam cores por nome e largura de 1.8 ponto. As arestas com uma única célula incidente, excluindo todas as fronteiras físicas registradas, são desenhadas em preto, com largura de 0.8 ponto.
+
+Essa borda preta é inferida das células, sem receber uma lista de frentes ativas. Pode incluir laterais livres da camada. A seleção `boundaries` controla apenas quais fronteiras físicas são mostradas; não muda essa classificação. Os vértices usam cinza.
 
 ## Normais em frentes selecionadas
 
@@ -44,3 +48,7 @@ figure, ax = plot_mesh(
 `normals` recebe pares `(front, vetores)`. Para mostrar várias frentes, acrescentar os respectivos pares à sequência. Os pontos de aplicação são os vértices atuais da frente, na ordem de `np.unique(front.entities.edge)`, mesma ordem usada pelas operações. Recalcular os vetores após cada avanço. A função não calcula nem armazena normais em `Front`.
 
 `normal_scale` multiplica o comprimento dos vetores apenas na figura, em unidades das coordenadas. O padrão é 0.1. As setas são suportadas em 2D e 3D, desde que os vetores tenham `mesh.dim` componentes; o cálculo atual de normais permanece planar. Omitir `normals` mantém o comportamento anterior.
+
+Em 2D, o eixo da seta tem largura fixa de 0.8 ponto, igual à linha das células. A cabeça usa largura de três vezes e comprimento de quatro vezes essa largura. Assim, `normal_scale` altera o comprimento em coordenadas, sem engrossar o eixo ou aumentar a cabeça. Os limites incluem origens e pontas, com margem proporcional ao maior vetor.
+
+Em 3D, `quiver` usa a mesma largura de linha, mas mantém a cabeça proporcional ao comprimento da seta. O ajuste dos limites inclui uma margem para essas cabeças. A renderização 2D e 3D não usa exatamente a mesma regra para a cabeça.

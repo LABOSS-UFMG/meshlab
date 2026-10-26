@@ -21,4 +21,4 @@ Todas as distâncias estão nas unidades das coordenadas. Os parâmetros são va
 
 Contornos com auto-interseções ou furos internos não fazem parte deste contrato. As geometrias de refinamento devem ter coordenadas 2D na exportação atual. A orientação do contorno não altera o refinamento. Nomes não criam patches nem precisam ser únicos entre referências de refinamento.
 
-O refinamento não redistribui os pontos da geometria, não fixa novos nós e não altera camadas já geradas. A densidade de amostragem de uma curva descreve sua forma; `size` controla o tamanho solicitado ao Gmsh. Ver [integração](../interfaces/gmsh.md).
+O refinamento não redistribui os pontos da geometria, não fixa novos nós e não altera camadas já geradas. A densidade de amostragem de uma curva descreve sua forma; `size` controla o tamanho solicitado ao Gmsh. Ver [campo de tamanho](../export/refinement.md).

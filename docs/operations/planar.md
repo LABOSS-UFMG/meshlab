@@ -51,4 +51,6 @@ Não há verificação de qualidade, colisões ou limites da guia nessa operaç�
 
 O crescimento segue `h_k = h_0 * growth_rate**k`. A correção de canto usa `h_k / sin(angle/2)`. O exemplo suavizado usa `h_k / sin(angle/2 + abs(rotation_acumulada))`, preservando a heurística legada; não é garantia geral de espessura normal ou validade.
 
-A seção final de `t3.ipynb` usa dez camadas, altura inicial `0.04`, crescimento `1.10` e colapso de candidatos menores que `1.5*h_k`. Nos parâmetros demonstrados, colapsa nove arestas e termina com 258 quadriláteros e nove triângulos. Os critérios do colapso estão em [collapse_edges.md](collapse_edges.md).
+O [tutorial t2](../../tutorials/t2.ipynb) combina o avanço com detecção e colapso de arestas curtas. Os critérios estão em [collapse_edges.md](collapse_edges.md).
+
+Nos extremos guiados, pontos preexistentes não devem ficar dentro do trecho varrido por uma célula nova: apenas ordenar os índices da guia não subdivide a face dessa célula. Reservar esse trecho ao avanço evita nós pendurados na exportação.

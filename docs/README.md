@@ -9,7 +9,7 @@ Esta documentação descreve o código atual e seus cálculos. Os exemplos de us
 | `core/` | Coordenadas, células, curvas, contornos, frentes e referências de refinamento | [Estruturas](core/README.md) |
 | `operations/` | Montagem, normais, ângulos, suavização, avanço e colapso | [Operações](operations/README.md) |
 | `export/` | Preenchimento residual, refinamento, extrusão/revolução e gravação Gmsh | [Exportação](export/README.md) |
-| `utils/` | Validação dos construtores e visualização | [Validação](utils/validation.md), [visualização](utils/plot_mesh.md) |
+| `utils/` | Validação dos construtores e visualização | [Utilitários](utils/README.md) |
 
 ## Fluxo implementado
 
@@ -37,9 +37,10 @@ Redistribuição de pontos e um coordenador geral continuam como possibilidades 
 |---|---|
 | `t0.ipynb` | Curvas e contornos de dois corpos em domínio retangular |
 | `t1.ipynb` | Avanço manual e em laço ao redor de um círculo |
-| `t3.ipynb` | Geometria em L, normais, suavização e dez camadas com colapso |
-| `t4.ipynb` | Canal com canto e frentes guiadas nas paredes |
-| `t5.ipynb` | Aerofólio e exportação para OpenFOAM |
-| `t6.ipynb` | Dois corpos e refinamentos por ponto, curva e região fechada |
+| `t2.ipynb` | Geometria em L, suavização e colapso de arestas |
+| `t3.ipynb` | Canal com canto e frentes guiadas nas paredes |
+| `t4.ipynb` | Aerofólio e exportação para OpenFOAM |
+| `t5.ipynb` | Aerofólio com slat e flap |
+| `t6.ipynb` | Aerospike axissimétrico, camadas nas paredes e refinamento local |
 
 A suíte básica é executada com `.venv/bin/python -m pytest -q`. Os testes verificam contratos selecionados, não garantem validade de qualquer geometria ou conjunto de parâmetros.

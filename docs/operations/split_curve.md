@@ -36,4 +36,4 @@ Retorna duas novas `Curve`, chamadas `<nome>_1` e `<nome>_2`, sem alterar a entr
 
 Os trechos da superfície preservam exatamente seus nós; o corte tem as mesmas coordenadas nas duas curvas, em ordem oposta. Cada curva repete seu primeiro ponto no fim e conserva a orientação da entrada. Antes de inserir ambas como corpos separados, criar uma folga por translação ou outra transformação: imediatamente após o corte, elas compartilham a interface.
 
-O `t5.ipynb` usa a função no flap. O slat desse tutorial continua sendo definido pelo corte vertical anterior.
+Esta operação pertence ao pacote. Funções auxiliares em `tutorials/functions/` podem usar interfaces próprias para construir as geometrias dos exemplos; não devem ser confundidas com a API de `meshlab.operations.split_curve`.

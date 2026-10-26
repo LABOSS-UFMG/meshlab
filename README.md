@@ -78,23 +78,21 @@ The `main` branch should only be updated after the new features have been review
 
 # 3. Project structure
 
-The project is organized into four main modules.
-
-```
+```text
 meshlab/
+├── core/          # Mesh, curves, contours, fronts and refinement data
+├── operations/    # Assembly and boundary-layer algorithms
+├── export/        # Residual triangulation and Gmsh volume export
+└── utils/         # Constructor validation and plotting
 
-├── data/          # Data structures
-├── operations/    # Mesh generation and manipulation algorithms
-├── export/        # Interfaces with gmsh
-├── visualization/ # Visualization utilities
-└── utils/         # Utility functions
+docs/              # Developer documentation, organized by source module
+tutorials/         # Jupyter notebooks demonstrating the public workflow
+tests/             # Basic automated checks
 ```
-
-The code is intentionally organized so that new features can usually be implemented by modifying a single file.
 
 # 4. Documentation
 
-The package is documented using NumPy-style docstrings.
+See the [developer documentation](docs/README.md) for architecture, calculations and implementation limits. The package also uses NumPy-style docstrings.
 
 Every new function or class should include:
 
@@ -104,13 +102,7 @@ Every new function or class should include:
 
 # 5. Running the tutorials
 
-The `tutorials/` directory contains simple scripts demonstrating the main features of the package.
-
-For example,
-
-```bash
-python examples/square.py
-```
+Open the notebooks in [tutorials/](tutorials/) with Jupyter and execute their cells in order, using the environment where MeshLab is installed. Start with `t0.ipynb`; the [documentation index](docs/README.md#tutoriais-atuais) lists the remaining examples.
 
 # 6. Running the tests
 
@@ -120,6 +112,4 @@ Run all unit tests with
 pytest
 ```
 
-The unit tests must be update when a new feature is included or a modification is made.
-
-Ficou muito bom! Agora eu quero a sua ajuda com a parte de criar a malha final a partir do gmsh. Como você sugere que seja a estrutura de pastas e arquivos para fazer esse processo? A exportação deve seguir o que foi feito no método anterior. O objetivo é exportar a malha para ser utilizada no openfoam. Como estava, estava funcionando normalmente. Agora eu quero fazer uma alteração, porque eu quero dois tipos de exportação: 1) como estava sendo feito com uma malha 2D e um elemento na direção d espessura; e 2) uma malha axissimétrica com um eixo de revolução. Isso é feito definindo um eixo e rotacionando um ângulo pequeno em torno dele. O eixo de revolução vai ser definido por uma curva (nesse caso a curva vai definir uma reta).
+The unit tests must be updated when a new feature is included or a modification is made.

@@ -12,6 +12,7 @@ As funções recebem `mesh` e, quando necessário, `front`. Não armazenam refer
 | `advance_front.py` | Desloca os nós, projeta extremos guiados e insere quadriláteros | `None` |
 | `find_short_edges.py` | Comprimento e ordenação das arestas abaixo do limiar | Lista de pares |
 | `collapse_edges.py` | Une grupos aceitos e compacta a conectividade | Mapa de índices |
+| `split_curve.py` | Separa uma curva fechada por segmentos e arco tangente | Duas curvas |
 
 ## `insert_contour(mesh, contour)`
 

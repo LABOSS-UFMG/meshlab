@@ -1,6 +1,6 @@
 # `core/` — estruturas de dados
 
-**Status:** estruturas implementadas; montagem inicial implementada; operações legadas em `operations-old/` aguardam migração.
+**Status:** estruturas e operações de montagem implementadas. `operations-old/` é uma referência histórica, não o caminho de execução atual.
 
 | Arquivo | Classes | Responsabilidade |
 |---|---|---|
@@ -14,7 +14,7 @@
 
 ## Convenções
 
-As classes armazenam dados; refinamento, normais, suavização e avanço pertencem às operações. Os atributos internos usam prefixo `_` e propriedades expõem o estado. Uma propriedade sem setter não torna o array retornado imutável.
+As classes armazenam dados; normais, suavização e avanço pertencem às operações. O campo de tamanho de `Refinement` é aplicado pelo módulo de exportação. Os atributos internos usam prefixo `_` e propriedades expõem o estado. Uma propriedade sem setter não torna o array retornado imutável.
 
 `Cells`, `FrontEntities` e `Refinement` usam `@dataclass(slots=True, repr=False, eq=False)`: contêineres simples acessados por atributos, sem interface de dicionário. Isso não os torna estruturas binárias compatíveis com C. Os buffers NumPy são o ponto de integração para futuros núcleos compilados.
 

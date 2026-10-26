@@ -1,6 +1,6 @@
 # `core/mesh.py` — malha e blocos de células
 
-**Status:** implementado. As operações legadas ainda não usam esta estrutura.
+**Status:** implementado e utilizado pelas operações atuais.
 
 ## `Mesh`
 
@@ -56,10 +56,10 @@ As inserções convertem os dados para os tipos configurados, mas não fazem ver
 
 Após uma expansão, obter novamente `mesh.points` e `block.connectivity`: vistas e ponteiros antigos podem continuar ligados ao buffer anterior. Essa regra também se aplica à integração futura com C ou C++.
 
-Remoção, compactação e renumeração não estão implementadas no núcleo. Sua futura implementação precisará atualizar as referências de células, frentes e associações das fronteiras.
+O núcleo não oferece métodos genéricos de remoção ou compactação. A operação `collapse_edges` compacta os buffers, remapeia células, fronteiras e a frente recebida e retorna um mapa para atualizar outras frentes. Ver [colapso](../operations/collapse_edges.md).
 
 ## Fronteiras físicas
 
 `_boundaries` é inicializado como um dicionário independente por malha, acessível pela propriedade gravável `boundaries`. Cada chave é o nome globalmente único de uma curva; o valor é um array de índices ordenados em `mesh.int_dtype`. Não há agrupamento pelo nome do contorno.
 
-`insert_contour` preenche esse registro; `initialize_front` usa uma seleção explícita de nomes para construir as arestas móveis. Nomes únicos são responsabilidade do usuário, sem verificação. As fronteiras não mudam quando a conectividade da frente é alterada. Ver [montagem](../operations/README.md).
+`insert_contour` preenche esse registro; `initialize_front` usa uma seleção explícita de nomes para construir as arestas móveis. Nomes únicos são responsabilidade do usuário, sem verificação. O avanço mantém as fronteiras de origem, mas acrescenta nós às guias; o colapso remapeia os índices após compactação. Ver [montagem](../operations/README.md).

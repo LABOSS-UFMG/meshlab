@@ -16,7 +16,7 @@ front = Front(
 )
 ```
 
-O uso futuro das operações segue o padrão `operacao(mesh, front, ...)`. A dimensão espacial é consultada em `mesh.dim`, nunca duplicada na frente. Os índices da frente referenciam os vértices da malha fornecida à operação.
+O uso das operações segue o padrão `operacao(mesh, front, ...)`. A dimensão espacial é consultada em `mesh.dim`, nunca duplicada na frente. Os índices da frente referenciam os vértices da malha fornecida à operação.
 
 ## Dados
 
