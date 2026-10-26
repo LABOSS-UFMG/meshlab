@@ -38,7 +38,7 @@ def create_polygon(
     num_vertices = len(vertices)
 
     for i in range(num_vertices):
-
+        
         # Define edge vertices
         start = vertices[i]
         end = vertices[(i + 1) % num_vertices]
