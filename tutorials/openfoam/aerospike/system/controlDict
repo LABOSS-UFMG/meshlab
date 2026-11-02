@@ -18,7 +18,7 @@ solver          shockFluid;
 
 startFrom       startTime;
 
-startTime       500;
+startTime       0;
 
 stopAt          endTime;
 
@@ -26,9 +26,9 @@ endTime         5000;
 
 deltaT          1;
 
-writeControl    adjustableRunTime;
+writeControl    timeStep;
 
-writeInterval   100;
+writeInterval   1000;
 
 purgeWrite      0;
 
@@ -44,8 +44,11 @@ timePrecision   8;
 
 runTimeModifiable true;
 
-// localEuler uses local pseudo-time steps; time labels count iterations.
 adjustTimeStep  no;
 
+functions
+{
+    #include "functions"
+}
 
 // ************************************************************************* //

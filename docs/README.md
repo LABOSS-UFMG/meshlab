@@ -9,7 +9,7 @@ Esta documentação descreve o código atual e seus cálculos. Os exemplos de us
 | `core/` | Coordenadas, células, curvas, contornos, frentes e referências de refinamento | [Estruturas](core/README.md) |
 | `operations/` | Montagem, normais, ângulos, suavização, avanço e colapso | [Operações](operations/README.md) |
 | `export/` | Preenchimento residual, refinamento, extrusão/revolução e gravação Gmsh | [Exportação](export/README.md) |
-| `utils/` | Validação dos construtores e visualização | [Utilitários](utils/README.md) |
+| `utils/` | Validação, visualização e redistribuição de curvas | [Utilitários](utils/README.md) |
 
 ## Fluxo implementado
 
@@ -29,7 +29,7 @@ As classes guardam dados e as funções operam sobre eles. Não há `Domain` nem
 
 Não há detecção global de colisões, união de frentes independentes ou proteção automática contra sobreposição no avanço. O colapso verifica apenas suas células incidentes. Guias são retas; a projeção pode extrapolar o segmento se o passo escolhido for inadequado.
 
-Redistribuição de pontos e um coordenador geral continuam como possibilidades futuras, resumidas em [curvas](operations/curves.md) e [coordenação](generation/README.md). Essas pastas propostas não são módulos implementados.
+A [redistribuição de curvas](utils/refinement.md) usa monitores de densidade antes da montagem. Um [coordenador geral](generation/README.md) continua como possibilidade futura, sem módulo implementado.
 
 ## Tutoriais atuais
 

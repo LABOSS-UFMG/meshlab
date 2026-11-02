@@ -1,0 +1,299 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : foamRun
+Date   : Nov 02 2026
+Time   : 15:56:30
+Host   : "user-Precision-7530"
+PID    : 10
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Create mesh for time = 0
+
+Selecting solver fluid
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Selecting turbulence model type RAS
+    Selecting RAS turbulence model kOmegaSST
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+No MRF models present
+
+Selecting patchDistMethod meshWave
+Creating fvConstraints from "system/fvConstraints"
+
+Selecting thermophysical transport type RAS
+Selecting default RAS thermophysical transport model unityLewisEddyDiffusivity
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/0/../constant/caseParameters"
+
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: Operating solver in steady-state mode with 1 outer corrector
+PIMPLE: Operating solver in SIMPLE mode
+
+
+
+Starting time loop
+
+Time = 1s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.9999999052, Final residual = 0.03008616256, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.9999999414, Final residual = 0.02444061194, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 1, Final residual = 0.0131170586, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 0.001876547805, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1330355192, Final residual = 0.0002270522492, No Iterations 1
+time step continuity errors : sum local = 0.2611918838, global = 1.474558141e-15, cumulative = 1.474558141e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.002393584709, Final residual = 0.0002105129275, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 1, Final residual = 0.006783190449, No Iterations 1
+ExecutionTime = 0.165238 s  ClockTime = 0 s
+
+Time = 2s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.004224920151, Final residual = 7.182897655e-05, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.0221984924, Final residual = 0.0002533749273, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.02219000619, Final residual = 0.0003364008636, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1679733929, Final residual = 0.0002264336545, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0703540222, Final residual = 9.55900931e-05, No Iterations 1
+time step continuity errors : sum local = 0.2612692532, global = 2.852472449e-15, cumulative = 4.327030589e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.001943399744, Final residual = 0.0001649188105, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 0.218018613, Final residual = 0.001510637896, No Iterations 1
+ExecutionTime = 0.185609 s  ClockTime = 0 s
+
+Time = 3s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.001882624882, Final residual = 3.022668734e-05, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.009267597573, Final residual = 0.0001122552217, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.009267544032, Final residual = 0.0001345553113, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0916149716, Final residual = 0.0001278059349, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.05223038392, Final residual = 7.294635241e-05, No Iterations 1
+time step continuity errors : sum local = 0.2613586592, global = 3.178365598e-15, cumulative = 7.505396187e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.001468954101, Final residual = 0.0001098130255, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 0.08595789455, Final residual = 0.000573918405, No Iterations 1
+ExecutionTime = 0.205466 s  ClockTime = 0 s
+
+Time = 4s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.001227125015, Final residual = 2.170630365e-05, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.005832310302, Final residual = 8.375161746e-05, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.005807097996, Final residual = 6.957852999e-05, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.09390811142, Final residual = 9.466276167e-05, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0421227031, Final residual = 6.074133753e-05, No Iterations 1
+time step continuity errors : sum local = 0.2614882468, global = -4.32902138e-16, cumulative = 7.072494049e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.001423394518, Final residual = 8.06914278e-05, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 0.03127576854, Final residual = 0.0002038337178, No Iterations 1
+ExecutionTime = 0.225064 s  ClockTime = 0 s
+
+Time = 5s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0008202765458, Final residual = 1.490089643e-05, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.003951616191, Final residual = 6.438813076e-05, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.002952518595, Final residual = 3.981551151e-05, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.09616434365, Final residual = 7.342292083e-05, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.04093193124, Final residual = 5.211966186e-05, No Iterations 1
+time step continuity errors : sum local = 0.2628492809, global = -3.787953098e-16, cumulative = 6.69369874e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.00112272012, Final residual = 5.695638046e-05, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 0.0120308366, Final residual = 0.0008925562347, No Iterations 1
+ExecutionTime = 0.244984 s  ClockTime = 0 s
+
+Time = 6s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0005666469235, Final residual = 8.919209975e-06, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.002920489675, Final residual = 4.95140766e-05, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.002019970388, Final residual = 2.468211155e-05, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.08760839972, Final residual = 0.0002273960686, No Iterations 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03793472663, Final residual = 6.662828307e-05, No Iterations 1
+time step continuity errors : sum local = 0.2822608363, global = 8.91117422e-16, cumulative = 7.584816162e-15
+DILUPBiCGStab:  Solving for omega, Initial residual = 0.0006418646282, Final residual = 3.492403371e-05, No Iterations 1
+DILUPBiCGStab:  Solving for k, Initial residual = 0.005194730181, Final residual = 0.000245142691, No Iterations 1
+ExecutionTime = 0.263965 s  ClockTime = 0 s
+
+Time = 7s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.0004840826726, Final residual = 5.207246288e-06, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.002100469381, Final residual = 3.451169878e-05, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.00323198991, Final residual = 3.369783485e-05, No Iterations 1
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#3  ? in "/usr/lib/x86_64-linux-gnu/libm.so.6"
+#4  Foam::PsiThermo<Foam::BasicThermo<Foam::pureMixture<Foam::sutherlandTransport<Foam::species::thermo<Foam::hConstThermo<Foam::perfectGas<Foam::specie> >, Foam::sensibleEnthalpy> > >, Foam::psiThermo::composite> >::calculate() at ??:?
+#5  virtual thunk to Foam::PsiThermo<Foam::BasicThermo<Foam::pureMixture<Foam::sutherlandTransport<Foam::species::thermo<Foam::hConstThermo<Foam::perfectGas<Foam::specie> >, Foam::sensibleEnthalpy> > >, Foam::psiThermo::composite> >::correct() at ??:?
+#6  Foam::solvers::fluid::thermophysicalPredictor() at ??:?
+#7  ? in "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun"
+#8  ? in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#9  __libc_start_main in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#10  ? in "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun"
+Floating point exception (core dumped)

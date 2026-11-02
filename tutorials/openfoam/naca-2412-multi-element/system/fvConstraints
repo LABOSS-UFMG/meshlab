@@ -1,0 +1,7 @@
+FoamFile
+{
+    format ascii;
+    class dictionary;
+    object fvConstraints;
+}
+// No pressure/temperature clipping: invalid states must not be hidden.

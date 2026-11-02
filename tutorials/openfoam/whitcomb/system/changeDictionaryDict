@@ -1,0 +1,23 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      changeDictionaryDict;
+}
+
+boundary
+{
+    "frontAndBack"
+    {
+        type            empty;
+        physicalType    empty;
+        inGroups        1(empty);
+    }
+    "surface"
+    {
+        type            wall;
+        physicalType    wall;
+        inGroups        1(wall);
+    }
+}

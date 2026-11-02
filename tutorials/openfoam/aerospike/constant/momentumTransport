@@ -15,5 +15,3 @@ FoamFile
 }
 
 simulationType  laminar;
-
-// Laminar viscous flow; mu is specified in physicalProperties.

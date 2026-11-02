@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 13-18870c24d21c
 Exec   : changeDictionary -constant
-Date   : Oct 26 2026
-Time   : 16:21:20
+Date   : Nov 02 2026
+Time   : 11:09:04
 Host   : "user-Precision-7530"
-PID    : 11
+PID    : 36930
 I/O    : uncollated
 Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike
 nProcs : 1
@@ -24,6 +24,41 @@ changeDictionary has been superseded by foamDictionary and is now deprecated.
 
 Create time
 
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
 Create mesh for time = constant
 
 Reading "changeDictionaryDict"
@@ -37,13 +72,13 @@ wedge_front
 wedge_back
 spike
 outlet
-duct_inner
+duct_bottom
 inlet
-duct_outer
-ambient_top
-outer_lip
-outer_casing
+duct_top
 ambient_inlet
+outer_casing
+outer_lip
+ambient_top
 )
 
 Replacing entries in dictionary boundary
@@ -52,7 +87,7 @@ Merging entries from
 2
 (
 wedge_(front|back)
-(spike|duct_inner|duct_outer|outer_lip|outer_casing)
+(spike|duct_bottom|duct_top|outer_lip|outer_casing)
 )
 
 fieldDict:
@@ -61,16 +96,16 @@ fieldDict:
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       45838;
+        nFaces          14849;
+        startFace       23179;
         inGroups        1 ( wedge );
     }
     wedge_back
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       76008;
+        nFaces          14849;
+        startFace       38028;
         inGroups        1 ( wedge );
     }
     spike
@@ -78,68 +113,68 @@ fieldDict:
         type            wall;
         physicalType    wall;
         nFaces          110;
-        startFace       106178;
+        startFace       52877;
         inGroups        1 ( wall );
     }
     outlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          50;
-        startFace       106288;
+        nFaces          8;
+        startFace       52987;
     }
-    duct_inner
+    duct_bottom
     {
         type            wall;
         physicalType    wall;
-        nFaces          20;
-        startFace       106338;
+        nFaces          25;
+        startFace       52995;
         inGroups        1 ( wall );
     }
     inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          40;
-        startFace       106358;
+        nFaces          42;
+        startFace       53020;
     }
-    duct_outer
+    duct_top
     {
         type            wall;
         physicalType    wall;
-        nFaces          50;
-        startFace       106398;
-        inGroups        1 ( wall );
-    }
-    ambient_top
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          70;
-        startFace       106448;
-    }
-    outer_lip
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          24;
-        startFace       106518;
-        inGroups        1 ( wall );
-    }
-    outer_casing
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          60;
-        startFace       106542;
+        nFaces          100;
+        startFace       53062;
         inGroups        1 ( wall );
     }
     ambient_inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          80;
-        startFace       106602;
+        nFaces          19;
+        startFace       53162;
+    }
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          94;
+        startFace       53181;
+        inGroups        1 ( wall );
+    }
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       53275;
+        inGroups        1 ( wall );
+    }
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          19;
+        startFace       53335;
     }
 }
 
@@ -157,13 +192,13 @@ wedge_front
 wedge_back
 spike
 outlet
-duct_inner
+duct_bottom
 inlet
-duct_outer
-ambient_top
-outer_lip
-outer_casing
+duct_top
 ambient_inlet
+outer_casing
+outer_lip
+ambient_top
 )
 
 Extracted patch groups:
@@ -171,10 +206,10 @@ Extracted patch groups:
 5
 (
 spike
-duct_inner
-duct_outer
-outer_lip
+duct_bottom
+duct_top
 outer_casing
+outer_lip
 )
 
     group wedge with patches 
@@ -190,7 +225,7 @@ Merging entries from
 2
 (
 wedge_(front|back)
-(spike|duct_inner|duct_outer|outer_lip|outer_casing)
+(spike|duct_bottom|duct_top|outer_lip|outer_casing)
 )
 
 fieldDict:
@@ -199,16 +234,16 @@ fieldDict:
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       45838;
+        nFaces          14849;
+        startFace       23179;
         inGroups        1 ( wedge );
     }
     wedge_back
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       76008;
+        nFaces          14849;
+        startFace       38028;
         inGroups        1 ( wedge );
     }
     spike
@@ -216,68 +251,68 @@ fieldDict:
         type            wall;
         physicalType    wall;
         nFaces          110;
-        startFace       106178;
+        startFace       52877;
         inGroups        1 ( wall );
     }
     outlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          50;
-        startFace       106288;
+        nFaces          8;
+        startFace       52987;
     }
-    duct_inner
+    duct_bottom
     {
         type            wall;
         physicalType    wall;
-        nFaces          20;
-        startFace       106338;
+        nFaces          25;
+        startFace       52995;
         inGroups        1 ( wall );
     }
     inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          40;
-        startFace       106358;
+        nFaces          42;
+        startFace       53020;
     }
-    duct_outer
+    duct_top
     {
         type            wall;
         physicalType    wall;
-        nFaces          50;
-        startFace       106398;
-        inGroups        1 ( wall );
-    }
-    ambient_top
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          70;
-        startFace       106448;
-    }
-    outer_lip
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          24;
-        startFace       106518;
-        inGroups        1 ( wall );
-    }
-    outer_casing
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          60;
-        startFace       106542;
+        nFaces          100;
+        startFace       53062;
         inGroups        1 ( wall );
     }
     ambient_inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          80;
-        startFace       106602;
+        nFaces          19;
+        startFace       53162;
+    }
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          94;
+        startFace       53181;
+        inGroups        1 ( wall );
+    }
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       53275;
+        inGroups        1 ( wall );
+    }
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          19;
+        startFace       53335;
     }
 }
 

@@ -1,0 +1,35 @@
+// SI units. Geometry lies in x-y; z is the empty/span direction.
+MachInf             0.2;
+angleOfAttack       20;          // degrees; positive Uy
+pInf                101325;     // absolute static pressure
+TInf                288.15;     // static temperature
+chord               1;
+span                0.1;        // actual extrusion thickness
+momentChordFraction 0.25;
+
+molWeight           28.96;
+Cp                  1005;
+As                  1.458e-6;
+Ts                  110.4;
+Prt                 0.85;
+turbulenceIntensity 0.001;      // fraction, 0.1 percent
+viscosityRatio      10;         // freestream nut/nu
+
+Rgas        #calc "8314.46261815324 / $molWeight";
+Cv          #calc "$Cp - $Rgas";
+gamma       #calc "$Cp / $Cv";
+aInf        #calc "sqrt($gamma*$Rgas*$TInf)";
+UInf        #calc "$MachInf*$aInf";
+rhoInf      #calc "$pInf / ($Rgas*$TInf)";
+muInf       #calc "$As*sqrt($TInf) / (1 + $Ts / $TInf)";
+nuInf       #calc "$muInf / $rhoInf";
+ReChord     #calc "$rhoInf*$UInf*$chord / $muInf";
+alphaRad    #calc "degToRad($angleOfAttack)";
+dragDir     #calc "vector(cos($alphaRad), sin($alphaRad), 0)";
+liftDir     #calc "vector(-sin($alphaRad), cos($alphaRad), 0)";
+pitchAxis   (0 0 1);
+UFreestream #calc "$UInf*$<vector>dragDir";
+Aref        #calc "$chord*$span";
+CofR        #calc "vector($momentChordFraction*$chord, 0, 0.5*$span)";
+kInf        #calc "1.5*sqr($turbulenceIntensity*$UInf)";
+omegaInf    #calc "$kInf / ($viscosityRatio*$nuInf)";

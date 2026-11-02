@@ -38,7 +38,7 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
-    duct_inner
+    duct_bottom
     {
         type            calculated;
         value           uniform 0;
@@ -46,19 +46,14 @@ boundaryField
     inlet
     {
         type            calculated;
-        value           uniform 0.9999039555228973;
+        value           uniform 0.9999995813739495;
     }
-    duct_outer
+    duct_top
     {
         type            calculated;
         value           uniform 0;
     }
-    ambient_top
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    outer_lip
+    ambient_inlet
     {
         type            calculated;
         value           uniform 0;
@@ -68,7 +63,12 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
-    ambient_inlet
+    outer_lip
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    ambient_top
     {
         type            calculated;
         value           uniform 0;

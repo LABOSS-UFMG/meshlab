@@ -1,0 +1,234 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : checkMesh
+Date   : Nov 02 2026
+Time   : 15:35:56
+Host   : "user-Precision-7530"
+PID    : 7
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/platforms/linux64GccDPInt32Opt/lib/libcodeStream_3a11a6a96af6a6b75383dbac66b0ee62a09482ec.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_3a11a6a96af6a6b75383dbac66b0ee62a09482ec.so
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/platforms/linux64GccDPInt32Opt/lib/libcodeStream_47d961a8a658869836e681bf0b7ab289c3970ae4.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_47d961a8a658869836e681bf0b7ab289c3970ae4.so
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/platforms/linux64GccDPInt32Opt/lib/libcodeStream_518b6c46a7b891f425edd24563891258b316fdad.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_518b6c46a7b891f425edd24563891258b316fdad.so
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/platforms/linux64GccDPInt32Opt/lib/libcodeStream_efb1ba2663da8651876b4e6bd5eaea0ae5be008f.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_efb1ba2663da8651876b4e6bd5eaea0ae5be008f.so
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/platforms/linux64GccDPInt32Opt/lib/libcodeStream_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4.so
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/platforms/linux64GccDPInt32Opt/lib/libcodeStream_d8402c84bdea7c021ae0c4fcf8054483f863277c.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_d8402c84bdea7c021ae0c4fcf8054483f863277c.so
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/platforms/linux64GccDPInt32Opt/lib/libcodeStream_cd66d8d45d849d5d150aaf5706305a2448dfd058.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_cd66d8d45d849d5d150aaf5706305a2448dfd058.so
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/platforms/linux64GccDPInt32Opt/lib/libcodeStream_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e.so
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/platforms/linux64GccDPInt32Opt/lib/libcodeStream_610d8237b7a76d1000957712d0ecee04446405d1.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_610d8237b7a76d1000957712d0ecee04446405d1.so
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/platforms/linux64GccDPInt32Opt/lib/libcodeStream_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f.so
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/platforms/linux64GccDPInt32Opt/lib/libcodeStream_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80.so
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/platforms/linux64GccDPInt32Opt/lib/libcodeStream_71a20d0538c0465e92ec655900db3d218074daf0.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_71a20d0538c0465e92ec655900db3d218074daf0.so
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/platforms/linux64GccDPInt32Opt/lib/libcodeStream_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982.so
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/platforms/linux64GccDPInt32Opt/lib/libcodeStream_1d7e0e64830c0e7319180cccd9b468560ed82a6b.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_1d7e0e64830c0e7319180cccd9b468560ed82a6b.so
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/platforms/linux64GccDPInt32Opt/lib/libcodeStream_d7108e6efdf21e8976f5baa35decef2db59b5336.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_d7108e6efdf21e8976f5baa35decef2db59b5336.so
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/platforms/linux64GccDPInt32Opt/lib/libcodeStream_deed79a337647180e21bfd95df35135ccf22bfb9.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/NACA-2412/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_deed79a337647180e21bfd95df35135ccf22bfb9.so
+Create mesh for time = 0
+
+Time = 0s
+
+Mesh stats
+    points:           8910
+    internal points:  0
+    faces:            26853
+    internal faces:   11717
+    cells:            7466
+    faces per cell:   5.166086258
+    boundary patches: 3
+    point zones:      0
+    face zones:       0
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     1240
+    prisms:        6226
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+    Patch               Faces    Points   Surface topology                  
+    frontAndBack        14932    8910     ok (non-closed singly connected)  
+    wall                124      248      ok (non-closed singly connected)  
+    freestream          80       160      ok (non-closed singly connected)  
+
+Checking geometry...
+    Overall domain bounding box (-10 -10 0) (10 10 0.1)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+    Max cell openness = 2.026385927e-16 OK.
+    Max aspect ratio = 4.953080671 OK.
+    Minimum face area = 3.469618529e-06. Maximum face area = 0.26696673.  Face area magnitudes OK.
+    Min volume = 3.469618529e-07. Max volume = 0.026696673.  Total volume = 31.37541389.  Cell volumes OK.
+    Mesh non-orthogonality Max: 30.58622365 average: 4.207727252
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 2.106162082 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+

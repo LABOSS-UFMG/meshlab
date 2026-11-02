@@ -1,3 +1,10 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
 FoamFile
 {
     format      ascii;
@@ -6,7 +13,7 @@ FoamFile
     object      p;
 }
 
-#include "include/initialConditions"
+#include "../constant/caseParameters"
 
 dimensions      [1 -1 -2 0 0 0 0];
 internalField   uniform $pAmbient;
@@ -16,14 +23,25 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform $pInlet;
+        value           uniform $pThroat;
     }
-    "(outlet|ambient_top|ambient_inlet)"
+    outlet
     {
-        type            fixedValue;
+        type            waveTransmissive;
+        field           p;
+        psi             psi;
+        gamma           $gamma;
         value           uniform $pAmbient;
     }
-    "(spike|duct_inner|duct_outer|outer_lip|outer_casing)"
+    "(ambient_top|ambient_inlet)"
+    {
+        type            totalPressure;
+        p0              uniform $pAmbient;
+        psi             psi;
+        gamma           $gamma;
+        value           uniform $pAmbient;
+    }
+    "(spike|duct_top|duct_bottom|outer_lip|outer_casing)"
     {
         type            zeroGradient;
     }

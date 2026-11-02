@@ -22,8 +22,8 @@ FoamFile
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       45838;
+        nFaces          14849;
+        startFace       23179;
         inGroups        1 ( wedge );
     }
 
@@ -31,8 +31,8 @@ FoamFile
     {
         type            wedge;
         physicalType    wedge;
-        nFaces          30170;
-        startFace       76008;
+        nFaces          14849;
+        startFace       38028;
         inGroups        1 ( wedge );
     }
 
@@ -41,7 +41,7 @@ FoamFile
         type            wall;
         physicalType    wall;
         nFaces          110;
-        startFace       106178;
+        startFace       52877;
         inGroups        1 ( wall );
     }
 
@@ -49,16 +49,16 @@ FoamFile
     {
         type            patch;
         physicalType    patch;
-        nFaces          50;
-        startFace       106288;
+        nFaces          8;
+        startFace       52987;
     }
 
-    duct_inner
+    duct_bottom
     {
         type            wall;
         physicalType    wall;
-        nFaces          20;
-        startFace       106338;
+        nFaces          25;
+        startFace       52995;
         inGroups        1 ( wall );
     }
 
@@ -66,42 +66,16 @@ FoamFile
     {
         type            patch;
         physicalType    patch;
-        nFaces          40;
-        startFace       106358;
+        nFaces          42;
+        startFace       53020;
     }
 
-    duct_outer
+    duct_top
     {
         type            wall;
         physicalType    wall;
-        nFaces          50;
-        startFace       106398;
-        inGroups        1 ( wall );
-    }
-
-    ambient_top
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          70;
-        startFace       106448;
-    }
-
-    outer_lip
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          24;
-        startFace       106518;
-        inGroups        1 ( wall );
-    }
-
-    outer_casing
-    {
-        type            wall;
-        physicalType    wall;
-        nFaces          60;
-        startFace       106542;
+        nFaces          100;
+        startFace       53062;
         inGroups        1 ( wall );
     }
 
@@ -109,8 +83,34 @@ FoamFile
     {
         type            patch;
         physicalType    patch;
-        nFaces          80;
-        startFace       106602;
+        nFaces          19;
+        startFace       53162;
+    }
+
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          94;
+        startFace       53181;
+        inGroups        1 ( wall );
+    }
+
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       53275;
+        inGroups        1 ( wall );
+    }
+
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          19;
+        startFace       53335;
     }
 
 )

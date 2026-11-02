@@ -1,0 +1,14 @@
+#include "../constant/caseParameters"
+type            forceCoeffs;
+libs            ("libforces.so");
+patches         (surface);
+rho             rho;
+p               p;
+U               U;
+pRef            $pInf;
+magUInf         $UInf;
+lRef            $chord;
+// Aref, rhoInf, CofR, liftDir, dragDir and pitchAxis from caseParameters.
+log             false;
+writeControl    timeStep;
+writeInterval   1;

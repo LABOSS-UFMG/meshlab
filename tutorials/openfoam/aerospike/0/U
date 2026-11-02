@@ -1,3 +1,10 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
 FoamFile
 {
     format      ascii;
@@ -6,7 +13,7 @@ FoamFile
     object      U;
 }
 
-#include "include/initialConditions"
+#include "../constant/caseParameters"
 
 dimensions      [0 1 -1 0 0 0 0];
 internalField   uniform $UAmbient;
@@ -15,17 +22,17 @@ boundaryField
 {
     inlet
     {
-        type            fixedValue;
-        value           uniform $UInlet;
+        type            surfaceNormalFixedValue;
+        refValue        uniform $normalUThroat;
     }
     "(outlet|ambient_top|ambient_inlet)"
     {
         type            pressureInletOutletVelocity;
         value           uniform $UAmbient;
     }
-    "(spike|duct_inner|duct_outer|outer_lip|outer_casing)"
+    "(spike|duct_top|duct_bottom|outer_lip|outer_casing)"
     {
-        type            noSlip;
+        type            slip;
     }
     "wedge_(front|back)"
     {

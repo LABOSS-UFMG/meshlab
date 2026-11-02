@@ -1,13 +1,15 @@
+# -------------------------------------------------------------------------------- #
 import numpy as np
 
+# -------------------------------------------------------------------------------- #
 def transform_curve(
-    curve: np.ndarray,
-    *,
-    dx: float = 0.0,
-    dy: float = 0.0,
-    theta: float = 0.0,
-    center: np.ndarray | None = None,
-) -> np.ndarray:
+        curve: np.ndarray,
+        *,
+        dx: float = 0.0,
+        dy: float = 0.0,
+        theta: float = 0.0,
+        center: np.ndarray | None = None,
+    ) -> np.ndarray:
     """Rotaciona uma curva 2D em torno do seu próprio centro e depois translada"""
     theta = np.deg2rad(theta)
     curve = np.asarray(curve, dtype=float)
@@ -28,3 +30,5 @@ def transform_curve(
 
     # Translação final
     return rotated + np.array([dx, dy])
+
+# -------------------------------------------------------------------------------- #

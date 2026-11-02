@@ -1,0 +1,98 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : checkMesh
+Date   : Nov 02 2026
+Time   : 15:56:30
+Host   : "user-Precision-7530"
+PID    : 9
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Create mesh for time = 0
+
+Time = 0s
+
+Mesh stats
+    points:           15852
+    internal points:  0
+    faces:            42264
+    internal faces:   19086
+    cells:            11446
+    faces per cell:   5.359951075
+    boundary patches: 3
+    point zones:      0
+    face zones:       0
+    cell zones:       1
+
+Overall number of cells of each type:
+    hexahedra:     4120
+    prisms:        7326
+    wedges:        0
+    pyramids:      0
+    tet wedges:    0
+    tetrahedra:    0
+    polyhedra:     0
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking patch topology for multiply connected surfaces...
+    Patch               Faces    Points   Surface topology                  
+    frontAndBack        22892    15852    ok (non-closed singly connected)  
+    surface             206      412      ok (non-closed singly connected)  
+    freestream          80       160      ok (non-closed singly connected)  
+
+Checking geometry...
+    Overall domain bounding box (-10 -10 0) (10 10 0.1)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
+    Mesh has 2 solution (non-empty) directions (1 1 0)
+    All edges aligned with or perpendicular to non-empty directions.
+    Max cell openness = 1.514671749e-15 OK.
+    Max aspect ratio = 136.7731854 OK.
+    Minimum face area = 5.779463366e-09. Maximum face area = 0.2996941179.  Face area magnitudes OK.
+    Min volume = 5.779463366e-10. Max volume = 0.02996941179.  Total volume = 31.37627773.  Cell volumes OK.
+    Mesh non-orthogonality Max: 45.6550932 average: 4.473290184
+    Non-orthogonality check OK.
+    Face pyramids OK.
+    Max skewness = 1.148442999 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+

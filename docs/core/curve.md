@@ -1,6 +1,6 @@
 # `core/curve.py` — curva nomeada
 
-**Status:** armazenamento e montagem implementados; redistribuição de pontos ainda não implementada.
+**Status:** armazenamento e montagem implementados; redistribuição de pontos disponível em `utils/refinement.py`.
 
 ```python
 Curve(name, points, float_dtype=np.float64)
@@ -20,6 +20,6 @@ A classe não calcula normais. Em coordenadas 3D, uma curva isolada não determi
 
 ## Operações e montagem
 
-As [operações sobre curvas](../operations/curves.md) deverão separar interpolação geométrica de distribuição de pontos, preservar extremos e orientação e tratar cantos explicitamente. A proposta inicial redistribui os pontos antes da montagem em `Mesh`.
+A [redistribuição por monitores](../utils/refinement.md) retorna novos pontos antes da montagem em `Mesh`, preservando extremos e ordem de percurso. Cantos obrigatórios devem separar curvas distintas.
 
 O nome identifica a fronteira física. Não determina se a curva gera camadas: entradas e saídas também precisam de nomes. `insert_contour` registra os índices em `mesh.boundaries`; `initialize_front` seleciona curvas ativas e guias por nome. `split_curve` permite separar uma curva fechada antes da montagem, conforme [operações](../operations/README.md). Não há campos adicionais de refinamento ou condições de contorno em `Curve`.

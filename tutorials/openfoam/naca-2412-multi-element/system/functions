@@ -1,0 +1,43 @@
+forceCoeffsCompressible
+{
+    #include "forceCoeffsCompressible"
+}
+residuals
+{
+    type            residuals;
+    libs            ("libutilityFunctionObjects.so");
+    fields          (p U h k omega);
+    writeControl    timeStep;
+    writeInterval   1;
+}
+Mach
+{
+    type            MachNo;
+    libs            ("libfieldFunctionObjects.so");
+    writeControl    writeTime;
+}
+yPlus
+{
+    type            yPlus;
+    libs            ("libfieldFunctionObjects.so");
+    writeControl    writeTime;
+    log             false;
+}
+
+slatCoeffs
+{
+    $forceCoeffsCompressible;
+    patches (slat);
+}
+
+bodyCoeffs
+{
+    $forceCoeffsCompressible;
+    patches (body);
+}
+
+flapCoeffs
+{
+    $forceCoeffsCompressible;
+    patches (flap);
+}
