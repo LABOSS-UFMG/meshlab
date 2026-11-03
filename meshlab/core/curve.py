@@ -1,8 +1,7 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from collections.abc import Sequence
-from numpy.typing import DTypeLike
+from numpy.typing import DTypeLike, ArrayLike
 
 from meshlab.utils import validation
 
@@ -29,7 +28,7 @@ class Curve():
     def __init__(
             self,
             name: str,
-            points: Sequence[Sequence[float]] | np.ndarray,
+            points: ArrayLike,
             float_dtype: DTypeLike = np.float64,
         ) -> None:
         """
@@ -54,7 +53,7 @@ class Curve():
 
         # ------------------------------------------------------------------------ #
         # Copy coordinates and validate the stored representation
-        self._points = np.array(points, dtype=self._float_dtype, copy=True)
+        self._points = np.asarray(points, dtype=self._float_dtype, copy=True)
 
         # ------------------------------------------------------------------------ #
         return None

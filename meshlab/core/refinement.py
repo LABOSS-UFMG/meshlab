@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from meshlab.core.point import Point
 from meshlab.core.curve import Curve
 from meshlab.core.contour import Contour
+
 from meshlab.utils import validation
 
 # -------------------------------------------------------------------------------- #

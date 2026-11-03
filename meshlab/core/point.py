@@ -1,8 +1,7 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
-from collections.abc import Sequence
-from numpy.typing import DTypeLike
+from numpy.typing import DTypeLike, ArrayLike
 
 from meshlab.utils import validation
 
@@ -24,7 +23,7 @@ class Point():
     def __init__(
             self,
             name: str,
-            coordinates: Sequence[float] | np.ndarray,
+            coordinates: ArrayLike,
             float_dtype: DTypeLike = np.float64,
         ) -> None:
         """
@@ -40,7 +39,8 @@ class Point():
         # ------------------------------------------------------------------------ #
         # Validate constructor arguments and copy coordinates
         validation.is_float_dtype(float_dtype)
-        coordinates = np.array(coordinates, dtype=float_dtype, copy=True)
+        
+        coordinates = np.asarray(coordinates, dtype=float_dtype, copy=True)
         validation.is_point_coordinates(coordinates)
 
         # ------------------------------------------------------------------------ #

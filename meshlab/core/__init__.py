@@ -6,4 +6,14 @@ from .front import Front, FrontEntities
 from .point import Point
 from .refinement import Refinement
 
-__all__ = ["Mesh", "CellBlock", "Cells", "Curve", "Contour", "Front", "FrontEntities", "Point", "Refinement"]
+__all__ = [
+    "Mesh",
+    "CellBlock",
+    "Cells",
+    "Curve",
+    "Contour",
+    "Front",
+    "FrontEntities",
+    "Point",
+    "Refinement",
+]

@@ -12,10 +12,10 @@ from meshlab.utils import validation
 class CellBlock():
     """Store fixed-width connectivity with reserved capacity.
 
-    Atributes
-    ---------
+    Attributes
+    ----------
     connectivity : ndarray
-        Writable view of valid rows; reacquire it after storage growth.
+        Connectivity storage with shape (capacity, vertices_per_cell).
     num_cells : int
         Number of populated rows.
     """
@@ -88,7 +88,7 @@ class CellBlock():
 
     @property
     def connectivity(self) -> np.ndarray:
-        """Writable view of valid rows; reacquire it after storage growth."""
+        """Connectivity storage with shape (capacity, vertices_per_cell)."""
         return self._connectivity[:self._num_cells]
 
     # ---------------------------------------------------------------------------- #
