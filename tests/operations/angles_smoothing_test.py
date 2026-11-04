@@ -13,7 +13,7 @@ def test_l_angles_include_straight_and_reflex_vertices():
     initialize_front(mesh, front, curves=['wall'])
     front.entities.edge = front.entities.edge[::-1].copy()
     angles = compute_angles(mesh, front)
-    np.testing.assert_allclose(angles, np.array([1, 1, 1, 2, 1, 1, 1]) * np.pi / 2, atol=1e-6)
+    np.testing.assert_allclose(angles, np.array([1, 3, 3, 2, 3, 3, 3]) * np.pi / 2, atol=1e-6)
     assert angles.dtype == np.float32
 
 
@@ -38,5 +38,9 @@ def test_open_front_angles_use_neutral_endpoints():
         mesh.add_vertex(point)
     front = Front(entities=FrontEntities(edge=[[2, 0], [1, 2]]))
     angles = compute_angles(mesh, front)
-    np.testing.assert_allclose(angles, [np.pi, np.pi, np.pi / 2], atol=1e-6)
+    np.testing.assert_allclose(angles, [np.pi, np.pi, 3 * np.pi / 2], atol=1e-6)
     assert angles.dtype == mesh.float_dtype
+
+    front.entities.edge = front.entities.edge[:, ::-1].copy()
+    reversed_angles = compute_angles(mesh, front)
+    np.testing.assert_allclose(reversed_angles, [np.pi, np.pi, np.pi / 2], atol=1e-6)

@@ -67,11 +67,10 @@ def collapse_edges(
     """
     # ------------------------------------------------------------------------ #
     # Stage edits using original indices; compact storage only once at the end
-    if mesh.dim != 2:
-        raise NotImplementedError("Edge collapse is currently implemented only in 2D.")
     index_map = np.arange(mesh.num_vertices, dtype=mesh.int_dtype)
     if len(edges) == 0:
         return index_map
+    
     points = mesh.points.copy()
     front_edges = front.entities.edge.copy()
     blocks = (mesh.cells.triangle, mesh.cells.quadrilateral)
