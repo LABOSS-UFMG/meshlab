@@ -1,0 +1,6 @@
+# dynamicCode:
+# SHA1 = deed79a337647180e21bfd95df35135ccf22bfb9
+
+codeStreamTemplate.C
+
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libcodeStream_deed79a337647180e21bfd95df35135ccf22bfb9
