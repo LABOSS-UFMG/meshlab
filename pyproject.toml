@@ -29,6 +29,13 @@ issues = "https://github.com/LABOSS-UFMG/meshlab/issues"
 
 [tool.setuptools.packages.find]
 where = [""]
+include = ["meshlab", "meshlab.*"]
+exclude = [
+  ".vscode*",
+  "docs*",
+  "tests*",
+  "tutorials*",
+]
 
 [tool.pytest.ini_options]
 pythonpath = [""]

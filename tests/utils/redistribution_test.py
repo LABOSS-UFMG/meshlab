@@ -17,6 +17,12 @@ def test_uniform_and_exact_linear_density():
     np.testing.assert_array_equal(points, [[0, 0, 0], [1, 0, 0]])
 
 
+def test_integer_coordinates_preserve_fractional_spacing():
+    result = redistribute_points([[0, 0], [1, 0]], 5, kind="linear")
+    assert result.dtype == np.float64
+    np.testing.assert_array_equal(result[:, 0], [0, 0.25, 0.5, 0.75, 1])
+
+
 def test_combined_endpoint_monitors_and_smoothing():
     points = np.column_stack((np.linspace(0, 1, 101), np.zeros(101)))
     combined = lambda p: monitor_start(p) + monitor_end(p)

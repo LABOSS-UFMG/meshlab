@@ -1,6 +1,7 @@
 # -------------------------------------------------------------------------------- #
 import numpy as np
 
+from numpy.typing import ArrayLike
 from collections.abc import Callable
 from scipy.interpolate import interp1d
 
@@ -113,7 +114,7 @@ def monitor_corners(points: np.ndarray, strength: float = 10.0,
 
 # -------------------------------------------------------------------------------- #
 def redistribute_points(
-        points: np.ndarray,
+        points: ArrayLike,
         num_points: int,
         monitor: Callable[[np.ndarray], np.ndarray] | None = None,
         steps: int = 0,
@@ -139,6 +140,9 @@ def redistribute_points(
         Nonnegative number of simultaneous smoothing passes on the weights.
         Each pass blends one half of the current weight with one quarter
         of each neighbor. Open endpoints stay fixed; closed curves are periodic.
+    kind : str, default="cubic"
+        Coordinate interpolation method. Use "linear" for a two-point segment;
+        cubic interpolation requires at least four input points.
 
     Returns
     -------
@@ -149,15 +153,14 @@ def redistribute_points(
     Notes
     -----
     Integrates the piecewise-linear monitor by trapezoids and analytically
-    inverts its cumulative integral in each interval. Geometry uses linear
-    interpolation in normalized polyline arc length. Sampling and smoothing
+    inverts its cumulative integral in each interval. Geometry uses the selected
+    interpolation method in normalized polyline arc length. Sampling and smoothing
     do not change the input geometry, but reconnecting samples across omitted
     corners can cut those corners. No explicit argument validation is performed.
     """
     # ------------------------------------------------------------------------ #
     # Sample the monitor without exposing the caller's coordinate buffer
     original = np.asarray(points)
-    dtype = original.dtype
     points = np.array(original, dtype=float, copy=True)
     s = _arc_parameter(points)
     closed = np.array_equal(points[0], points[-1])
@@ -192,7 +195,8 @@ def redistribute_points(
     # ------------------------------------------------------------------------ #
     # Interpolate every coordinate and preserve exact endpoints
     result = np.column_stack([interp1d(s, coordinate, kind=kind)(parameters) for coordinate in points.T])
-    result = result.astype(dtype)
+    if original.dtype == np.float32:
+        result = result.astype(np.float32)
     result[0], result[-1] = original[0], original[-1]
     return result
 

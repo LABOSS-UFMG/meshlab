@@ -8,11 +8,11 @@ As classes, funções de implementação e o código auxiliar são agrupados em 
 
 | Pasta do pacote | Responsabilidade |
 |---|---|
-| [core](core/README.md) | Define as estruturas de dados que representam a geometria, a malha e os parâmetros de refinamento. |
-| [operations](operations/README.md) | Implementa as operações de geração de malha em funções com responsabilidades específicas. |
-| [export](export/README.md) | Usa o Gmsh para preencher a região ainda sem malha e gravar a malha em formato .msh com seus grupos físicos. |
-| [pipelines](pipelines/README.md) | Implementa procedimentos de geração de malha completos prontos para serem aplicados a casos reais. |
-| [utils](utils/README.md) | Implementa funções auxiliares como visualização da malha e validação. |
+| [core](2%20-%20Core.md) | Define as estruturas de dados que representam a geometria, a malha e os parâmetros de refinamento. |
+| [operations](3%20-%20Operations.md) | Implementa as operações de geração de malha em funções com responsabilidades específicas. |
+| [export](4%20-%20Export.md) | Usa o Gmsh para preencher a região ainda sem malha e gravar a malha em formato .msh com seus grupos físicos. |
+| [utils](5%20-%20Utils.md) | Implementa funções auxiliares como visualização da malha e validação. |
+| [pipelines](6%20-%20Pipelines.md) | Implementa procedimentos de geração de malha completos prontos para serem aplicados a casos reais. |
 
 A partir dos módulos descritos acima, é possível definir o fluxo de implementação da geração de malha a partir de 4 etapas, definidas por:
 

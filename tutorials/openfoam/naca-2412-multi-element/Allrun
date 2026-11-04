@@ -2,7 +2,8 @@
 set -eu
 cd "${0%/*}" || exit 1
 . "$WM_PROJECT_DIR/bin/tools/RunFunctions"
-runApplication -o gmshToFoam constant/gmsh/NACA-2412-multi-element.msh
-runApplication -o changeDictionary -constant
-runApplication -o checkMesh
-runApplication -o foamRun
+
+runApplication gmshToFoam constant/gmsh/NACA-2412-multi-element.msh
+runApplication changeDictionary -constant
+runApplication checkMesh
+runApplication foamRun

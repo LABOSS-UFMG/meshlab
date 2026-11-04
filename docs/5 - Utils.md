@@ -14,7 +14,7 @@ A função distribui uma quantidade definida de pontos ao longo de uma curva. O 
 
 | Parâmetro | Tipo | Descrição |
 |---|---|---|
-| `points` | array de forma `(N, 2)` ou `(N, 3)` | Coordenadas finitas em ordem de percurso, sem pontos consecutivos coincidentes. Uma curva fechada repete o primeiro ponto no final. Prefira coordenadas de ponto flutuante para preservar posições fracionárias. |
+| `points` | array de forma `(N, 2)` ou `(N, 3)` | Coordenadas finitas em ordem de percurso, sem pontos consecutivos coincidentes. Uma curva fechada repete o primeiro ponto no final. |
 | `num_points` | `int` | Número total de pontos de saída, incluindo os extremos. Use pelo menos dois em curvas abertas e quatro em curvas fechadas, contando o ponto repetido. |
 | `monitor` | função ou `None` | Recebe uma cópia das coordenadas e devolve um peso positivo e finito por ponto. O padrão `None` produz espaçamento uniforme no parâmetro de comprimento de arco. |
 | `steps` | `int` | Número de passos de suavização dos pesos. O padrão é zero. |
@@ -51,7 +51,7 @@ Por fim, a função interpola as coordenadas nesses parâmetros usando `kind`.
 
 ### Retorno e exemplo
 
-O retorno é um novo array de forma `(num_points, 2)` ou `(num_points, 3)`, com o tipo numérico da entrada. O primeiro e o último ponto preservam exatamente as coordenadas originais.
+O retorno é um novo array de forma `(num_points, 2)` ou `(num_points, 3)`. Entradas em `float32` mantêm essa precisão; as demais, inclusive coordenadas inteiras, produzem coordenadas em `float64`. O primeiro e o último ponto preservam exatamente as coordenadas originais.
 
 No exemplo, as duas distribuições têm cinco pontos no mesmo segmento. Com `monitor_start`, o primeiro intervalo fica menor que o último.
 
