@@ -7,10 +7,10 @@ from meshlab.utils import (
 
 def test_uniform_and_exact_linear_density():
     points = np.array([[0, 0, 0], [1, 0, 0]], dtype=np.float32)
-    uniform = redistribute_points(points, 11)
+    uniform = redistribute_points(points, 11, kind="linear")
     assert uniform.dtype == np.float32
     np.testing.assert_allclose(uniform[:, 0], np.linspace(0, 1, 11))
-    refined = redistribute_points(points, 11, lambda p: 1 + p[:, 0])
+    refined = redistribute_points(points, 11, lambda p: 1 + p[:, 0], kind="linear")
     # Integral of 1+x is x+x²/2; equal monitor mass is 1.5*i/10.
     np.testing.assert_allclose(refined[:, 0], np.sqrt(1 + 3*np.linspace(0, 1, 11)) - 1,
                                atol=1e-7)

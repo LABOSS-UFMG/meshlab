@@ -12,6 +12,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "numpy>=2.0",
+    "scipy>=1.13.0",
     "matplotlib>=3.7",
     "gmsh>=4.15.2",
 ]
