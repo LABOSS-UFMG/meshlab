@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "meshlab"
-version = "0.1.0"
+version = "1.0.0"
 description = "A Python toolkit for mesh generation and manipulation."
 authors = [{ name="Lucas Ribeiro Alves", email="lucas.ra.mast@gmail.com" }]
 readme = "README.md"
