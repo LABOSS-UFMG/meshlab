@@ -31,13 +31,13 @@ Os parâmetros após `fronts` são passados por nome. Um valor individual vale p
 
 A cada camada, a função percorre as frentes na ordem fornecida. Para cada frente que ainda tem camadas a gerar, recalcula as normais, aplica o número solicitado de passos de suavização e avança uma camada. Cada aresta da frente gera um quadrilátero.
 
-Na frente $i$, a altura fornecida ao avanço da camada $k$ é
+Na frente $`i`$, a altura fornecida ao avanço da camada $`k`$ é
 
-$$
+```math
 h_{i,k} = h_{i,1}\,r_i^{k-1}, \qquad k=1,\ldots,N_i,
-$$
+```
 
-em que $h_{i,1}$ é a altura inicial, $r_i$ é o fator de crescimento e $N_i$ é o número de camadas dessa frente. A altura é uniforme ao longo da frente em cada passo. Cabe ao usuário escolher alturas compatíveis com a geometria e o espaço disponível entre frentes.
+em que $`h_{i,1}`$ é a altura inicial, $`r_i`$ é o fator de crescimento e $`N_i`$ é o número de camadas dessa frente. A altura é uniforme ao longo da frente em cada passo. Cabe ao usuário escolher alturas compatíveis com a geometria e o espaço disponível entre frentes.
 
 Quando a razão é positiva, após cada avanço a função seleciona as arestas da nova frente com comprimento estritamente menor que `min_edge_ratio * altura_atual`. Por exemplo, com altura 0,1 e razão 0,5, arestas menores que 0,05 são candidatas. O [colapso](3.8%20-%20collapse_edges.md) só ocorre quando o grupo de arestas satisfaz os critérios de proteção das fronteiras e validade local. Com `min_edge_ratio=[0.5, 0.0]`, apenas a primeira frente passa por essa verificação.
 

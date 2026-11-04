@@ -31,7 +31,7 @@ meshlab.export.export_mesh(
 
 **1. Completa a seção.** A função preserva os triângulos e quadriláteros existentes e preenche a região restante com triângulos. Os parâmetros `mesh_size` e `refinements` atuam nessa triangulação, mantendo os segmentos de fronteira já definidos.
 
-**2. Gera uma camada volumétrica.** No modo planar, a seção é transladada ao longo do eixo $z$ pela distância `thickness`. No modo axissimétrico, a seção é varrida de $-\theta/2$ até $+\theta/2$ em torno de `axis`, com $\theta$ igual a `angle`. A seção deve ficar de um só lado do eixo e pode tocá-lo. Os vértices sobre o eixo são compartilhados pelas duas faces do setor.
+**2. Gera uma camada volumétrica.** No modo planar, a seção é transladada ao longo do eixo $`z`$ pela distância `thickness`. No modo axissimétrico, a seção é varrida de $`-\theta/2`$ até $`+\theta/2`$ em torno de `axis`, com $`\theta`$ igual a `angle`. A seção deve ficar de um só lado do eixo e pode tocá-lo. Os vértices sobre o eixo são compartilhados pelas duas faces do setor.
 
 **3. Registra os grupos físicos.** O volume recebe o nome `fluid`. As superfícies laterais herdam os nomes das fronteiras que as geraram. No modo planar, as duas faces da seção formam o grupo `frontAndBack`. No modo axissimétrico, elas formam os grupos `wedge_front` e `wedge_back`. Esses nomes e `fluid` são reservados.
 

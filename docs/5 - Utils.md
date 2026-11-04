@@ -26,8 +26,8 @@ As quatro funções recebem as coordenadas originais e retornam um array de form
 
 | Função | Distribuição dos pontos |
 |---|---|
-| `monitor_start(points, strength=5.0, width=0.1)` | Concentra pontos no início. O peso é $1+A\exp(-s/w)$, em que $A$ é `strength`, $w$ é `width` e $s$ é o comprimento de arco normalizado entre 0 e 1. Uma largura positiva maior estende o efeito por um trecho maior. |
-| `monitor_end(points, strength=5.0, width=0.1)` | Concentra pontos no fim. Usa os mesmos parâmetros, com peso $1+A\exp(-(1-s)/w)$. |
+| `monitor_start(points, strength=5.0, width=0.1)` | Concentra pontos no início. O peso é $`1+A\exp(-s/w)`$, em que $`A`$ é `strength`, $`w`$ é `width` e $`s`$ é o comprimento de arco normalizado entre 0 e 1. Uma largura positiva maior estende o efeito por um trecho maior. |
+| `monitor_end(points, strength=5.0, width=0.1)` | Concentra pontos no fim. Usa os mesmos parâmetros, com peso $`1+A\exp(-(1-s)/w)`$. |
 | `monitor_curvature(points, strength=5.0)` | Concentra pontos onde a direção varia mais por unidade de comprimento. Estima a curvatura pelo ângulo de giro dividido pelo comprimento médio das duas arestas incidentes e normaliza pela maior curvatura da curva. Em um trecho inteiramente reto, os pesos são uniformes. |
 | `monitor_corners(points, strength=10.0, min_angle=np.pi/6)` | Concentra pontos perto de cantos cujo ângulo de giro supera `min_angle`. O giro vale zero em um trecho reto. O limiar é dado em radianos, entre zero e π, excluído π. |
 
@@ -35,17 +35,17 @@ Em curvas abertas, o monitor de curvatura atribui a cada extremo a estimativa do
 
 ### Método de cálculo
 
-**1. Parametrização.** A função soma os comprimentos dos segmentos até cada ponto e divide pelo comprimento total da poligonal. O parâmetro resultante, $s$, varia de 0 a 1.
+**1. Parametrização.** A função soma os comprimentos dos segmentos até cada ponto e divide pelo comprimento total da poligonal. O parâmetro resultante, $`s`$, varia de 0 a 1.
 
-**2. Suavização dos pesos.** Em cada passo, um peso interior $w_i$ recebe a média ponderada $(w_{i-1}+2w_i+w_{i+1})/4$, usando os pesos do passo anterior. Nas curvas abertas, os pesos dos extremos permanecem fixos. Nas fechadas, a vizinhança é periódica.
+**2. Suavização dos pesos.** Em cada passo, um peso interior $`w_i`$ recebe a média ponderada $`(w_{i-1}+2w_i+w_{i+1})/4`$, usando os pesos do passo anterior. Nas curvas abertas, os pesos dos extremos permanecem fixos. Nas fechadas, a vizinhança é periódica.
 
-**3. Redistribuição.** A função interpola os pesos linearmente entre as amostras e integra essa densidade pelo método dos trapézios. Em seguida, escolhe os parâmetros de saída de modo que cada intervalo contenha a mesma parcela da integral. Para $M$ pontos de saída e densidade $w(s)$, o parâmetro do ponto $j$ satisfaz
+**3. Redistribuição.** A função interpola os pesos linearmente entre as amostras e integra essa densidade pelo método dos trapézios. Em seguida, escolhe os parâmetros de saída de modo que cada intervalo contenha a mesma parcela da integral. Para $`M`$ pontos de saída e densidade $`w(s)`$, o parâmetro do ponto $`j`$ satisfaz
 
-$$
+```math
 \int_0^{s_j} w(s)\,ds =
 \frac{j}{M-1}\int_0^1 w(s)\,ds,
 \qquad j=0,\ldots,M-1.
-$$
+```
 
 Por fim, a função interpola as coordenadas nesses parâmetros usando `kind`.
 
