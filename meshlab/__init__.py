@@ -1,17 +1,15 @@
 # -------------------------------------------------------------------------------- #
-from meshlab import data
-from meshlab import export
+from meshlab import core
 from meshlab import operations
-from meshlab import visualization
 from meshlab import utils
+from meshlab import pipelines
 
 # -------------------------------------------------------------------------------- #
 __all__ = [
-    "data",
-    "export",
+    "core",
     "operations",
-    "visualization",
     "utils",
+    "pipelines"
 ]
 
 # -------------------------------------------------------------------------------- #

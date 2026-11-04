@@ -1,0 +1,119 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     0.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+11
+(
+    wedge_front
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          14849;
+        startFace       23179;
+        inGroups        1 ( wedge );
+    }
+
+    wedge_back
+    {
+        type            wedge;
+        physicalType    wedge;
+        nFaces          14849;
+        startFace       38028;
+        inGroups        1 ( wedge );
+    }
+
+    spike
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          110;
+        startFace       52877;
+        inGroups        1 ( wall );
+    }
+
+    outlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          8;
+        startFace       52987;
+    }
+
+    duct_bottom
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          25;
+        startFace       52995;
+        inGroups        1 ( wall );
+    }
+
+    inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          42;
+        startFace       53020;
+    }
+
+    duct_top
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          100;
+        startFace       53062;
+        inGroups        1 ( wall );
+    }
+
+    ambient_inlet
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          19;
+        startFace       53162;
+    }
+
+    outer_casing
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          94;
+        startFace       53181;
+        inGroups        1 ( wall );
+    }
+
+    outer_lip
+    {
+        type            wall;
+        physicalType    wall;
+        nFaces          60;
+        startFace       53275;
+        inGroups        1 ( wall );
+    }
+
+    ambient_top
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          19;
+        startFace       53335;
+    }
+
+)
+
+
+// ************************************************************************* //

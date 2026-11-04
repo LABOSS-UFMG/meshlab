@@ -1,0 +1,23 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      changeDictionaryDict;
+}
+
+boundary
+{
+    "wedge_(front|back)"
+    {
+        type            wedge;
+        physicalType    wedge;
+        inGroups        1(wedge);
+    }
+    "(spike|duct_bottom|duct_top|outer_lip|outer_casing)"
+    {
+        type            wall;
+        physicalType    wall;
+        inGroups        1(wall);
+    }
+}

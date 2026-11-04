@@ -1,0 +1,232 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : foamRun
+Date   : Nov 02 2026
+Time   : 16:11:46
+Host   : "user-Precision-7530"
+PID    : 3170
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/system/../constant/caseParameters"
+Create mesh for time = 0
+
+Selecting solver fluid
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Selecting thermodynamics package 
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       sutherland;
+    thermo          hConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Selecting turbulence model type RAS
+    Selecting RAS turbulence model kOmegaSST
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+No MRF models present
+
+Selecting patchDistMethod meshWave
+Creating fvConstraints from "system/fvConstraints"
+
+Selecting thermophysical transport type RAS
+Selecting default RAS thermophysical transport model unityLewisEddyDiffusivity
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/naca-2412-multi-element/0/../constant/caseParameters"
+
+PIMPLE: No convergence criteria found
+
+
+PIMPLE: Operating solver in steady-state mode with 1 outer corrector
+PIMPLE: Operating solver in SIMPLE mode
+
+
+
+Starting time loop
+
+Time = 1s
+
+DILUPBiCGStab:  Solving for Ux, Initial residual = 0.9999996933, Final residual = 0.0123286107, No Iterations 1
+DILUPBiCGStab:  Solving for Uy, Initial residual = 0.9999996744, Final residual = 0.01194133814, No Iterations 1
+DILUPBiCGStab:  Solving for h, Initial residual = 0.9999999999, Final residual = 0.008615464295, No Iterations 1
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 0.009960242834, No Iterations 155
+DICPCG:  Solving for p, Initial residual = 0.02352784767, Final residual = 0.0002157227674, No Iterations 15
+time step continuity errors : sum local = 0.01564375656, global = 5.030793707e-05, cumulative = 5.030793707e-05
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::sigFpe::sigHandler(int) at ??:?
+#2  ? in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#3  ? in "/usr/lib/x86_64-linux-gnu/libm.so.6"
+#4  Foam::omegaWallFunctionFvPatchScalarField::calculate(Foam::momentumTransportModel const&) const at ??:?
+#5  Foam::omegaWallFunctionFvPatchScalarField::updateCoeffsMaster() at ??:?
+#6  Foam::omegaWallFunctionFvPatchScalarField::updateCoeffs() at ??:?
+#7  Foam::GeometricBoundaryField<double, Foam::volMesh, Foam::Field>::updateCoeffs() at ??:?
+#8  Foam::kOmegaSST<Foam::eddyViscosity<Foam::RASModel<Foam::compressibleMomentumTransportModel> >, Foam::compressibleMomentumTransportModel>::correct() at ??:?
+#9  ? in "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun"
+#10  ? in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#11  __libc_start_main in "/usr/lib/x86_64-linux-gnu/libc.so.6"
+#12  ? in "/opt/openfoam13/platforms/linux64GccDPInt32Opt/bin/foamRun"
+Floating point exception (core dumped)

@@ -1,0 +1,223 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : gmshToFoam constant/gmsh/whitcomb.msh
+Date   : Nov 02 2026
+Time   : 12:55:37
+Host   : "user-Precision-7530"
+PID    : 61535
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/platforms/linux64GccDPInt32Opt/lib/libcodeStream_3a11a6a96af6a6b75383dbac66b0ee62a09482ec.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_3a11a6a96af6a6b75383dbac66b0ee62a09482ec/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_3a11a6a96af6a6b75383dbac66b0ee62a09482ec.so
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/platforms/linux64GccDPInt32Opt/lib/libcodeStream_47d961a8a658869836e681bf0b7ab289c3970ae4.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_47d961a8a658869836e681bf0b7ab289c3970ae4/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_47d961a8a658869836e681bf0b7ab289c3970ae4.so
+Expanding #calc at line 21 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/platforms/linux64GccDPInt32Opt/lib/libcodeStream_518b6c46a7b891f425edd24563891258b316fdad.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_518b6c46a7b891f425edd24563891258b316fdad/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_518b6c46a7b891f425edd24563891258b316fdad.so
+Expanding #calc at line 22 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/platforms/linux64GccDPInt32Opt/lib/libcodeStream_efb1ba2663da8651876b4e6bd5eaea0ae5be008f.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_efb1ba2663da8651876b4e6bd5eaea0ae5be008f/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_efb1ba2663da8651876b4e6bd5eaea0ae5be008f.so
+Expanding #calc at line 23 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/platforms/linux64GccDPInt32Opt/lib/libcodeStream_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_72de1de5d86104d1f901afc4f1f3a06b3e8c25e4.so
+Expanding #calc at line 24 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/platforms/linux64GccDPInt32Opt/lib/libcodeStream_d8402c84bdea7c021ae0c4fcf8054483f863277c.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d8402c84bdea7c021ae0c4fcf8054483f863277c/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_d8402c84bdea7c021ae0c4fcf8054483f863277c.so
+Expanding #calc at line 25 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/platforms/linux64GccDPInt32Opt/lib/libcodeStream_cd66d8d45d849d5d150aaf5706305a2448dfd058.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_cd66d8d45d849d5d150aaf5706305a2448dfd058/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_cd66d8d45d849d5d150aaf5706305a2448dfd058.so
+Expanding #calc at line 26 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/platforms/linux64GccDPInt32Opt/lib/libcodeStream_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_e542fcec5e84f5b50f479b58d1e6eb7749f97f0e.so
+Expanding #calc at line 27 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/platforms/linux64GccDPInt32Opt/lib/libcodeStream_610d8237b7a76d1000957712d0ecee04446405d1.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_610d8237b7a76d1000957712d0ecee04446405d1/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_610d8237b7a76d1000957712d0ecee04446405d1.so
+Expanding #calc at line 28 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/platforms/linux64GccDPInt32Opt/lib/libcodeStream_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_c5c9e0c0b1293fe50f839e9c733fc56e22c09a4f.so
+Expanding #calc at line 29 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/platforms/linux64GccDPInt32Opt/lib/libcodeStream_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_7bcf50502f3c5e3043e4dc52c5c251abd3fb9c80.so
+Expanding #calc at line 31 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/platforms/linux64GccDPInt32Opt/lib/libcodeStream_71a20d0538c0465e92ec655900db3d218074daf0.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_71a20d0538c0465e92ec655900db3d218074daf0/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_71a20d0538c0465e92ec655900db3d218074daf0.so
+Expanding #calc at line 32 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/platforms/linux64GccDPInt32Opt/lib/libcodeStream_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_f32ee32c8f8bc74ec1e369e51555c41d1d1d3982.so
+Expanding #calc at line 33 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/platforms/linux64GccDPInt32Opt/lib/libcodeStream_1d7e0e64830c0e7319180cccd9b468560ed82a6b.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_1d7e0e64830c0e7319180cccd9b468560ed82a6b/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_1d7e0e64830c0e7319180cccd9b468560ed82a6b.so
+Expanding #calc at line 34 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/platforms/linux64GccDPInt32Opt/lib/libcodeStream_d7108e6efdf21e8976f5baa35decef2db59b5336.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_d7108e6efdf21e8976f5baa35decef2db59b5336/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_d7108e6efdf21e8976f5baa35decef2db59b5336.so
+Expanding #calc at line 35 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/platforms/linux64GccDPInt32Opt/lib/libcodeStream_deed79a337647180e21bfd95df35135ccf22bfb9.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/whitcomb/dynamicCode/_deed79a337647180e21bfd95df35135ccf22bfb9/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_deed79a337647180e21bfd95df35135ccf22bfb9.so
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:4
+    Surface 2	frontAndBack
+    Surface 3	surface
+    Surface 4	freestream
+    Volume 1	fluid
+
+Starting to read points at line 12
+Vertices to be read:15852
+Vertices read:15852
+
+Starting to read cells at line 15867
+Cells to be read:34624
+
+Mapping region 2 to Foam patch 0
+Mapping region 3 to Foam patch 1
+Mapping region 4 to Foam patch 2
+Mapping region 1 to Foam cellZone 0
+Cells:
+    total:11446
+    hex  :4120
+    prism:7326
+    pyr  :0
+    tet  :0
+
+CellZones:
+Zone	Size
+    0	11446
+
+Skipping tag  at line 50494
+Patch 0 gets name frontAndBack
+Patch 1 gets name surface
+Patch 2 gets name freestream
+
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone fluid and cellSet
+End
+

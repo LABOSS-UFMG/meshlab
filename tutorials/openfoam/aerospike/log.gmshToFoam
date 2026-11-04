@@ -1,0 +1,193 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 13-18870c24d21c
+Exec   : gmshToFoam constant/gmsh/aerospike.msh
+Date   : Nov 02 2026
+Time   : 11:08:58
+Host   : "user-Precision-7530"
+PID    : 35377
+I/O    : uncollated
+Case   : /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_9a4a30320cceee50576509dbe9f0b6b3130b28f8/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_9a4a30320cceee50576509dbe9f0b6b3130b28f8.so
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_43da17090e137b3f1add1bf57df86649689255bb/platforms/linux64GccDPInt32Opt/lib/libcodeStream_43da17090e137b3f1add1bf57df86649689255bb.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_43da17090e137b3f1add1bf57df86649689255bb/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_43da17090e137b3f1add1bf57df86649689255bb"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_43da17090e137b3f1add1bf57df86649689255bb
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_43da17090e137b3f1add1bf57df86649689255bb/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_43da17090e137b3f1add1bf57df86649689255bb.so
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c/platforms/linux64GccDPInt32Opt/lib/libcodeStream_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_bd0b5479c8e6ccbf1ce7111d679ec3f0cb72e04c.so
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_045c81432e73ba2371a91a0399128b2e23a32d5a/platforms/linux64GccDPInt32Opt/lib/libcodeStream_045c81432e73ba2371a91a0399128b2e23a32d5a.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_045c81432e73ba2371a91a0399128b2e23a32d5a/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_045c81432e73ba2371a91a0399128b2e23a32d5a"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_045c81432e73ba2371a91a0399128b2e23a32d5a
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_045c81432e73ba2371a91a0399128b2e23a32d5a/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_045c81432e73ba2371a91a0399128b2e23a32d5a.so
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_73ec6304f120cd15579177a512ff0337d8d40011/platforms/linux64GccDPInt32Opt/lib/libcodeStream_73ec6304f120cd15579177a512ff0337d8d40011.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_73ec6304f120cd15579177a512ff0337d8d40011/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_73ec6304f120cd15579177a512ff0337d8d40011"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_73ec6304f120cd15579177a512ff0337d8d40011
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_73ec6304f120cd15579177a512ff0337d8d40011/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_73ec6304f120cd15579177a512ff0337d8d40011.so
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_723fb5b72e81053321c42a5a0ff83a0716d41d93/platforms/linux64GccDPInt32Opt/lib/libcodeStream_723fb5b72e81053321c42a5a0ff83a0716d41d93.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_723fb5b72e81053321c42a5a0ff83a0716d41d93/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_723fb5b72e81053321c42a5a0ff83a0716d41d93"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_723fb5b72e81053321c42a5a0ff83a0716d41d93
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_723fb5b72e81053321c42a5a0ff83a0716d41d93/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_723fb5b72e81053321c42a5a0ff83a0716d41d93.so
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Creating new library in "dynamicCode/_78abfc925855bab70ba38f4e4b96f24cbd221999/platforms/linux64GccDPInt32Opt/lib/libcodeStream_78abfc925855bab70ba38f4e4b96f24cbd221999.so"
+"/opt/openfoam13/etc/codeTemplates/dynamicCode/codeStreamTemplate.C" "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_78abfc925855bab70ba38f4e4b96f24cbd221999/codeStreamTemplate.C"
+Invoking "wmake -s libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_78abfc925855bab70ba38f4e4b96f24cbd221999"
+wmake libso /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_78abfc925855bab70ba38f4e4b96f24cbd221999
+    ln: ./lnInclude
+    wmkdep: codeStreamTemplate.C
+    Ctoo: codeStreamTemplate.C
+    ld: /home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/dynamicCode/_78abfc925855bab70ba38f4e4b96f24cbd221999/../platforms/linux64GccDPInt32Opt/lib/libcodeStream_78abfc925855bab70ba38f4e4b96f24cbd221999.so
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 11 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 12 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 13 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 17 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 18 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 19 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Expanding #calc at line 20 in file "/home/user/Documentos/GitHub/meshlab/tutorials/openfoam/aerospike/system/../constant/caseParameters"
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:12
+    Surface 2	wedge_front
+    Surface 3	wedge_back
+    Surface 4	spike
+    Surface 5	duct_bottom
+    Surface 6	inlet
+    Surface 7	duct_top
+    Surface 8	ambient_inlet
+    Surface 9	outer_casing
+    Surface 10	outer_lip
+    Surface 11	outlet
+    Surface 12	ambient_top
+    Volume 1	fluid
+
+Starting to read points at line 20
+Vertices to be read:17677
+Vertices read:17677
+
+Starting to read cells at line 17700
+Cells to be read:45024
+
+Mapping region 2 to Foam patch 0
+Mapping region 3 to Foam patch 1
+Mapping region 4 to Foam patch 2
+Mapping region 11 to Foam patch 3
+Mapping region 5 to Foam patch 4
+Mapping region 6 to Foam patch 5
+Mapping region 7 to Foam patch 6
+Mapping region 8 to Foam patch 7
+Mapping region 9 to Foam patch 8
+Mapping region 10 to Foam patch 9
+Mapping region 12 to Foam patch 10
+Mapping region 1 to Foam cellZone 0
+Cells:
+    total:14849
+    hex  :2340
+    prism:12402
+    pyr  :55
+    tet  :52
+
+CellZones:
+Zone	Size
+    0	14849
+
+Skipping tag  at line 62727
+Patch 0 gets name wedge_front
+Patch 1 gets name wedge_back
+Patch 2 gets name spike
+Patch 3 gets name outlet
+Patch 4 gets name duct_bottom
+Patch 5 gets name inlet
+Patch 6 gets name duct_top
+Patch 7 gets name ambient_inlet
+Patch 8 gets name outer_casing
+Patch 9 gets name outer_lip
+Patch 10 gets name ambient_top
+
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+Finding faces of patch 3
+Finding faces of patch 4
+Finding faces of patch 5
+Finding faces of patch 6
+Finding faces of patch 7
+Finding faces of patch 8
+Finding faces of patch 9
+Finding faces of patch 10
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone fluid and cellSet
+End
+

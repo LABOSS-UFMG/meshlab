@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+cd "${0%/*}" || exit 1
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+runApplication gmshToFoam constant/gmsh/aerospike.msh
+runApplication changeDictionary -constant
+runApplication checkMesh
+runApplication foamRun

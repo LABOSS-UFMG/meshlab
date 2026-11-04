@@ -1,0 +1,30 @@
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSolution;
+}
+
+solvers
+{
+    "rho.*"
+    {
+        solver          diagonal;
+    }
+    "(U|e).*"
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-08;
+        relTol          0.01;
+    }
+}
+
+PIMPLE
+{
+    // One update per local pseudo-time step, without extra under-relaxation.
+    nOuterCorrectors        1;
+    maxCo                   0.5;
+    rDeltaTSmoothingCoeff   0.02;
+}

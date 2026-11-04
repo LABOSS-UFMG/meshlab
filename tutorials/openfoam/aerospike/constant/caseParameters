@@ -1,0 +1,24 @@
+// Shared SI parameters. Included from fields, physics and function objects.
+// The inlet is a choked throat (M=1), not a resolved reservoir.
+pReservoir      2e6;
+TReservoir      3000;
+pAmbient        101325;
+TAmbient        300;
+UAmbient        (0 0 0);
+
+molWeight       28.96;
+Cv              718;
+Rgas            #calc "8314.46261815324 / $molWeight";
+Cp              #calc "$Cv + $Rgas";
+gamma           #calc "$Cp / $Cv";
+As              1.458e-6;
+Ts              110.4;
+
+TThroat         #calc "2*$TReservoir / ($gamma + 1)";
+pThroat         #calc "$pReservoir*pow(2 / ($gamma + 1), $gamma / ($gamma - 1))";
+UThroat         #calc "sqrt($gamma*$Rgas*$TThroat)";
+normalUThroat   #calc "-$UThroat";
+
+solidPatches    (spike duct_bottom duct_top outer_lip outer_casing);
+// Metadata for interpreting sector integrals; must match the actual mesh.
+wedgeAngleDeg   5;

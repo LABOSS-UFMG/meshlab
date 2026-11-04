@@ -1,0 +1,93 @@
+// Only inlet mass flow and forces on individual solid patches.
+inletMassFlow
+{
+    type            surfaceFieldValue;
+    libs            ("libfieldFunctionObjects.so");
+    patch           inlet;
+    operation       sum;
+    fields          (phi);
+    writeFields     false;
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
+
+spikeForces
+{
+    #include "../constant/caseParameters"
+    type            forces;
+    libs            ("libforces.so");
+    patches         (spike);
+    p               p;
+    U               U;
+    rho             rho;
+    pRef            $pAmbient;
+    CofR            (0 0 0);
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
+
+ductBottomForces
+{
+    #include "../constant/caseParameters"
+    type            forces;
+    libs            ("libforces.so");
+    patches         (duct_bottom);
+    p               p;
+    U               U;
+    rho             rho;
+    pRef            $pAmbient;
+    CofR            (0 0 0);
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
+
+ductTopForces
+{
+    #include "../constant/caseParameters"
+    type            forces;
+    libs            ("libforces.so");
+    patches         (duct_top);
+    p               p;
+    U               U;
+    rho             rho;
+    pRef            $pAmbient;
+    CofR            (0 0 0);
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
+
+outerLipForces
+{
+    #include "../constant/caseParameters"
+    type            forces;
+    libs            ("libforces.so");
+    patches         (outer_lip);
+    p               p;
+    U               U;
+    rho             rho;
+    pRef            $pAmbient;
+    CofR            (0 0 0);
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
+
+outerCasingForces
+{
+    #include "../constant/caseParameters"
+    type            forces;
+    libs            ("libforces.so");
+    patches         (outer_casing);
+    p               p;
+    U               U;
+    rho             rho;
+    pRef            $pAmbient;
+    CofR            (0 0 0);
+    log             false;
+    writeControl    timeStep;
+    writeInterval   1;
+}
